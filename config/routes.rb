@@ -1,5 +1,10 @@
 # frozen_string_literal: true
 Rails.application.routes.draw do
+  resources :pages, only: [] do
+    get :home, on: :collection
+    get :about, on: :collection
+    get :contact, on: :collection
+  end
+
   resources :blogs
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

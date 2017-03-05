@@ -62,6 +62,10 @@ class PortfoliosController < ApplicationController
   end
   # rubocop:enable AbcSize, MethodLength
 
+  def show
+    @portfolio_item = Portfolio.find(params[:id])
+  end
+
   private
 
   def portfolio_params

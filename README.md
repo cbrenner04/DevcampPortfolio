@@ -14,7 +14,9 @@ https://www.udemy.com/professional-rails-5-development-course
 
 ## TODO
 
-- [ ] Update pages to separate controllers with index or show actions
+- [ ] Update Pages to separate controllers with index or show actions
+- [ ] Add testing
+- [ ] Remove scaffolded files that are unnecessary
 
 ### Code Example
 

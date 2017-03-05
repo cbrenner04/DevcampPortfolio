@@ -12,6 +12,10 @@ https://www.udemy.com/professional-rails-5-development-course
 - Portfolio
 - Drag and drop interface
 
+## TODO
+
+- [ ] Update pages to separate controllers with index or show actions
+
 ### Code Example
 
 ```ruby

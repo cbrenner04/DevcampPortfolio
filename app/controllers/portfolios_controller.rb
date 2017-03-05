@@ -36,6 +36,32 @@ class PortfoliosController < ApplicationController
   end
   # rubocop:enable MethodLength
 
+  def edit
+    @portfolio_item = Portfolio.find(params[:id])
+  end
+
+  # TODO: clean up
+  # rubocop:disable AbcSize, MethodLength
+  def update
+    @portfolio_item = Portfolio.find(params[:id])
+    respond_to do |format|
+      if @portfolio_item.update(portfolio_params)
+        format.html do
+          redirect_to portfolios_path,
+                      notice: 'Portfolio item successfully updated.'
+        end
+        format.json { render :show, status: :ok, location: @portfolio_item }
+      else
+        format.html { render :edit }
+        format.json do
+          render json: @portfolio_item.errors,
+                 status: :unprocessable_entity
+        end
+      end
+    end
+  end
+  # rubocop:enable AbcSize, MethodLength
+
   private
 
   def portfolio_params

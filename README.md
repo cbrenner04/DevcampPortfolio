@@ -21,6 +21,10 @@ https://www.udemy.com/professional-rails-5-development-course
 - [ ] Remove API code in controllers where unneeded
 - [ ] Remove custom route for portfolios show
 
+### Add ons
+
+- FriendlyId for slugs in Blog urls
+
 ### Code Example
 
 ```ruby

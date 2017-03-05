@@ -1,6 +1,6 @@
 AllCops:
   Exclude:
-    - 'db/schema.rb'
+    - 'db/**/*'
   TargetRubyVersion: 2.3
 
 Rails:
@@ -9,4 +9,3 @@ Rails:
 Style/Documentation:
   Exclude:
     - 'spec/**/*'
-    - 'db/migrate/*'

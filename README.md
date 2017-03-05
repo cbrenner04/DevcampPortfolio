@@ -17,6 +17,7 @@ https://www.udemy.com/professional-rails-5-development-course
 - [ ] Update Pages to separate controllers with index or show actions
 - [ ] Add testing
 - [ ] Remove scaffolded files that are unnecessary
+- [ ] Add model validations
 
 ### Code Example
 

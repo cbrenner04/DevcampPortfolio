@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+# TODO: dry up, remove API if unused
 # portfolio actions
 class PortfoliosController < ApplicationController
   def index
@@ -64,6 +65,18 @@ class PortfoliosController < ApplicationController
 
   def show
     @portfolio_item = Portfolio.find(params[:id])
+  end
+
+  def destroy
+    @portfolio_item = Portfolio.find(params[:id])
+    @portfolio_item.destroy
+    respond_to do |format|
+      format.html do
+        redirect_to portfolios_path,
+                    notice: 'Portfolio item destroyed.'
+      end
+      format.json { head :no_content }
+    end
   end
 
   private

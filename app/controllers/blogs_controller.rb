@@ -1,7 +1,8 @@
 # frozen_string_literal: true
 # actions for blogs
 class BlogsController < ApplicationController
-  before_action :set_blog, only: [:show, :edit, :update, :destroy]
+  before_action :set_blog,
+                only: [:show, :edit, :update, :destro, :toggle_status]
 
   # GET /blogs
   # GET /blogs.json
@@ -59,6 +60,11 @@ class BlogsController < ApplicationController
       format.html { redirect_to blogs_url, notice: 'Blog destroyed.' }
       format.json { head :no_content }
     end
+  end
+
+  def toggle_status
+    @blog.draft? ? @blog.published! : @blog.draft!
+    redirect_to blogs_url, notice: 'Blog status has been updated'
   end
 
   private

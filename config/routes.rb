@@ -1,5 +1,6 @@
 # frozen_string_literal: true
 Rails.application.routes.draw do
+  resources :whatevers
   resources :blogs do
     get :toggle_status, on: :member
   end

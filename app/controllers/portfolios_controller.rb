@@ -6,8 +6,16 @@ class PortfoliosController < ApplicationController
     @portfolio_items = Portfolio.all
   end
 
+  def show
+    @portfolio_item = Portfolio.find(params[:id])
+  end
+
   def new
     @portfolio_item = Portfolio.new
+  end
+
+  def edit
+    @portfolio_item = Portfolio.find(params[:id])
   end
 
   # TODO: clean up
@@ -35,14 +43,9 @@ class PortfoliosController < ApplicationController
       end
     end
   end
-  # rubocop:enable MethodLength
-
-  def edit
-    @portfolio_item = Portfolio.find(params[:id])
-  end
 
   # TODO: clean up
-  # rubocop:disable AbcSize, MethodLength
+  # rubocop:disable AbcSize
   def update
     @portfolio_item = Portfolio.find(params[:id])
     respond_to do |format|
@@ -62,10 +65,6 @@ class PortfoliosController < ApplicationController
     end
   end
   # rubocop:enable AbcSize, MethodLength
-
-  def show
-    @portfolio_item = Portfolio.find(params[:id])
-  end
 
   def destroy
     @portfolio_item = Portfolio.find(params[:id])

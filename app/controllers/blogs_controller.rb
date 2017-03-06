@@ -2,7 +2,7 @@
 # actions for blogs
 class BlogsController < ApplicationController
   before_action :set_blog,
-                only: [:show, :edit, :update, :destro, :toggle_status]
+                only: [:show, :edit, :update, :destroy, :toggle_status]
 
   # GET /blogs
   # GET /blogs.json
@@ -62,6 +62,7 @@ class BlogsController < ApplicationController
     end
   end
 
+  # TODO: needs test
   def toggle_status
     @blog.draft? ? @blog.published! : @blog.draft!
     redirect_to blogs_url, notice: 'Blog status has been updated'

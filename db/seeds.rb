@@ -1,11 +1,20 @@
 # frozen_string_literal: true
+3.times do |index|
+  Topic.create!(
+    title: "Topic #{index}"
+  )
+end
+
+p '3 topics created'
+
 10.times do |index|
   Blog.create!(
     title: "My Blog Post #{index}",
     body: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsum ' \
           'facere accusamus, at voluptate explicabo, doloremque voluptas nam ' \
           'minima natus excepturi assumenda suscipit eum quisquam sint eius ' \
-          'ratione deleniti autem maxime.'
+          'ratione deleniti autem maxime.',
+    topic: Topic.last
   )
 end
 

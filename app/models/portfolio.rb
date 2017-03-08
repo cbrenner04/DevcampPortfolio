@@ -5,6 +5,8 @@ class Portfolio < ApplicationRecord
 
   after_initialize :set_defaults
 
+  has_many :technologies
+
   validates :title, :body, :main_image, :thumb_image, presence: true
 
   def set_defaults

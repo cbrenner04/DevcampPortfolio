@@ -26,6 +26,15 @@
     <%= f.text_field :thumb_image %>
   </div>
 
+  <ul>
+    <%= f.fields_for :technologies do |tech_form| %>
+      <li>
+        <%= tech_form.label :name %>
+        <%= tech_form.text_field :name %>
+      </li>
+    <% end %>
+  </ul>
+
   <div class="actions">
     <%= f.submit %>
   </div>

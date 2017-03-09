@@ -3,3 +3,7 @@
 <h2><%= @portfolio_item.subtitle %></h2>
 <%= link_to "Edit this Portfolio Item", edit_portfolio_path(@portfolio_item) %>
 <p><%= @portfolio_item.body %></p>
+<h2>Technologies Used:</h2>
+<% @portfolio_item.technologies.each do |tech| %>
+  <p><%= tech.name %></p>
+<% end %>

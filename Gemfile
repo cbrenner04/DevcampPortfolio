@@ -67,3 +67,4 @@ end
 
 # addons
 gem 'friendly_id', '~> 5.2'
+gem 'site_prism', '~> 2.9'

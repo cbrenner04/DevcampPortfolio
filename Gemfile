@@ -66,5 +66,9 @@ end
 # gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 # addons
+# slugs for blogs
 gem 'friendly_id', '~> 5.2'
+# page object model for features
 gem 'site_prism', '~> 2.9'
+# authentication
+gem 'devise', '~> 4.2'

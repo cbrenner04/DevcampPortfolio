@@ -27,3 +27,4 @@ https://www.udemy.com/professional-rails-5-development-course
 - [FriendlyId](https://github.com/norman/friendly_id) for slugs in Blog urls
 - [SitePrism](https://github.com/natritmeyer/site_prism) for page object models
   for feature specs
+- [Devise](https://github.com/plataformatec/devise) for authentication

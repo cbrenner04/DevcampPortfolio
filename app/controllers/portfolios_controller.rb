@@ -1,22 +1,16 @@
 # frozen_string_literal: true
-# TODO: dry up, remove API if unused
 # portfolio actions
 class PortfoliosController < ApplicationController
+  before_action :set_portfolio, only: [:show, :edit, :update, :destroy]
   def index
     @portfolio_items = Portfolio.all
   end
 
-  def show
-    @portfolio_item = Portfolio.find(params[:id])
-  end
+  def show; end
 
   def new
     @portfolio_item = Portfolio.new
     3.times { @portfolio_item.technologies.build }
-  end
-
-  def edit
-    @portfolio_item = Portfolio.find(params[:id])
   end
 
   # TODO: clean up
@@ -45,10 +39,10 @@ class PortfoliosController < ApplicationController
     end
   end
 
+  def edit; end
+
   # TODO: clean up
-  # rubocop:disable AbcSize
   def update
-    @portfolio_item = Portfolio.find(params[:id])
     respond_to do |format|
       if @portfolio_item.update(portfolio_params)
         format.html do
@@ -65,10 +59,9 @@ class PortfoliosController < ApplicationController
       end
     end
   end
-  # rubocop:enable AbcSize, MethodLength
+  # rubocop:enable MethodLength
 
   def destroy
-    @portfolio_item = Portfolio.find(params[:id])
     @portfolio_item.destroy
     respond_to do |format|
       format.html do
@@ -86,5 +79,9 @@ class PortfoliosController < ApplicationController
       .require(:portfolio)
       .permit(:title, :subtitle, :body, :main_image, :thumb_image,
               technologies_attributes: [:name])
+  end
+
+  def set_portfolio
+    @portfolio_item = Portfolio.find(params[:id])
   end
 end

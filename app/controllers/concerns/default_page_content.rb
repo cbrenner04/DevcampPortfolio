@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+# Defaults used in layouts
 module DefaultPageContent
   extend ActiveSupport::Concern
 

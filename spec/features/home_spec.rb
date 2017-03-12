@@ -8,7 +8,7 @@ RSpec.feature "Home page" do
 
   scenario "visits" do
     save_and_open_page
-    expect(home_page.heading).to have_text "Home page"
+    expect(home_page.heading).to have_text "Hi, Guest"
   end
 
   scenario "sees blog posts"

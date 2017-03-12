@@ -6,4 +6,5 @@ class ApplicationController < ActionController::Base
   include SetSessionSource
   include CurrentUserConcern
   include DefaultPageContent
+  include CopyrightContent
 end

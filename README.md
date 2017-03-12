@@ -34,3 +34,4 @@ portfolios.
 - [SitePrism](https://github.com/natritmeyer/site_prism) for page object models
   for feature specs
 - [Devise](https://github.com/plataformatec/devise) for authentication
+- [Bootstrap](https://github.com/twbs/bootstrap-rubygem) for styling

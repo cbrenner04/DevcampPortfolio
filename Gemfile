@@ -72,3 +72,8 @@ gem 'friendly_id', '~> 5.2'
 gem 'site_prism', '~> 2.9'
 # authentication
 gem 'devise', '~> 4.2'
+# style
+gem 'bootstrap', '~> 4.0.0.alpha6'
+source 'https://rails-assets.org' do
+  gem 'rails-assets-tether', '>= 1.3.3'
+end

@@ -1,7 +1,8 @@
 <%= image_tag @portfolio_item.main_image %>
 <h1><%= @portfolio_item.title %></h1>
 <h2><%= @portfolio_item.subtitle %></h2>
-<%= link_to "Edit this Portfolio Item", edit_portfolio_path(@portfolio_item) %>
+<%= link_to "Edit this Portfolio Item",
+            edit_portfolio_path(@portfolio_item) if logged_in?(:admin) %>
 <p><%= @portfolio_item.body %></p>
 <h2>Technologies Used:</h2>
 <% @portfolio_item.technologies.each do |tech| %>

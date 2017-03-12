@@ -1,6 +1,9 @@
 # frozen_string_literal: true
 # portfolio actions
 class PortfoliosController < ApplicationController
+  access all: [:show, :index],
+         user: { except: [:destroy, :new, :create, :update, :edit] },
+         admin: :all
   before_action :set_portfolio, only: [:show, :edit, :update, :destroy]
   layout 'portfolio'
 

@@ -1,7 +1,11 @@
-<h1>Hi, <%= current_user.first_name %></h1>
-
-<h2>Blog Posts</h2>
-<%= @posts.inspect %>
-
-<h2>Skills</h2>
-<%= @skills.inspect %>
+<div class="inner cover">
+  <h1 class="cover-heading">Christopher J. Brenner, MPH</h1>
+  <p class="lead">
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Numquam
+    perspiciatis nostrum quas natus nemo libero, facere voluptatibus, quam nobis
+    nam qui optio modi ducimus blanditiis voluptatem unde vel, iste omnis.
+  </p>
+  <p class="lead">
+    <%= link_to "About me", about_path, class: "btn btn-lg btn-secondary" %>
+  </p>
+</div>

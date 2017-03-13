@@ -31,8 +31,11 @@ portfolios.
 *NOTE*: Some of these are in the tutorial, some are not
 
 - [FriendlyId](https://github.com/norman/friendly_id) for slugs in Blog urls
+- [FactoryGirl](https://github.com/thoughtbot/factory_girl_rails) for test data
+- [Capybara](https://github.com/teamcapybara/capybara) for acceptance testing
 - [SitePrism](https://github.com/natritmeyer/site_prism) for page object models
   for feature specs
+- [SimpleCov](https://github.com/colszowka/simplecov) for code coverage analysis
 - [Devise](https://github.com/plataformatec/devise) for authentication
 - [Bootstrap](https://github.com/twbs/bootstrap-rubygem) for styling
 - [Petergate](https://github.com/elorest/petergate) for authorization

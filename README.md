@@ -39,5 +39,5 @@ portfolios.
 - [Devise](https://github.com/plataformatec/devise) for authentication
 - [Bootstrap](https://github.com/twbs/bootstrap-rubygem) for styling
 - [Petergate](https://github.com/elorest/petergate) for authorization
-- [FontAwesome]() for icons
-- [Kaminari]() for pagination
+- [FontAwesome](https://github.com/bokmann/font-awesome-rails) for icons
+- [Kaminari](https://github.com/kaminari/kaminari) for pagination

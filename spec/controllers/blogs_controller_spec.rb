@@ -7,6 +7,10 @@ RSpec.describe BlogsController, type: :controller do
   let(:invalid_attributes) { { title: nil } }
   let(:valid_session) { {} }
 
+  let(:user) { create :user }
+
+  before { sign_in user }
+
   describe 'GET #index' do
     it 'assigns all blogs as @blogs' do
       blog = create :blog

@@ -15,6 +15,10 @@ RSpec.describe PortfoliosController, type: :controller do
   let(:invalid_attributes) { { title: nil } }
   let(:valid_session) { {} }
 
+  let(:user) { create :user }
+
+  before { sign_in user }
+
   describe 'GET #index' do
     it 'assigns all portfolio_items as @portfolio_items' do
       portfolio_item = create :portfolio

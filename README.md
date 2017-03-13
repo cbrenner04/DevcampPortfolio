@@ -43,3 +43,7 @@ portfolios.
 - [Petergate](https://github.com/elorest/petergate) for authorization
 - [FontAwesome](https://github.com/bokmann/font-awesome-rails) for icons
 - [Kaminari](https://github.com/kaminari/kaminari) for pagination
+- [HTML5 Sortable](https://github.com/lukasoppermann/html5sortable) for sorting
+  portfolio items
+- [jQuery UI Rails](https://github.com/jquery-ui-rails/jquery-ui-rails) required
+  for HTML5 Sortable

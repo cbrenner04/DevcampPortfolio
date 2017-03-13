@@ -13,7 +13,9 @@ Rails.application.routes.draw do
     get :toggle_status, on: :member
   end
 
-  resources :portfolios, except: [:show]
+  resources :portfolios, except: [:show] do
+    put :sort, on: :collection
+  end
 
   get :about, to: 'pages#about'
   get :contact, to: 'pages#contact'

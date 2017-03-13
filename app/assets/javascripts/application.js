@@ -12,7 +12,9 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require jquery-ui
 //= require tether
 //= require bootstrap-sprockets
+//= html.sortable.min
 //= require turbolinks
 //= require_tree .

@@ -25,6 +25,7 @@ portfolios.
 - [ ] Update blogs#toggle_status to its own controller
 - [ ] Add SEO keywords to blog model (maybe portfolio as well)
 - [ ] Add shared error alert partial
+- [ ] Update styles for better responsiveness
 
 ## Add ons
 

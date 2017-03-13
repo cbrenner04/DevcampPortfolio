@@ -2,7 +2,9 @@
 # actions for blogs
 class BlogsController < ApplicationController
   access all: [:show, :index],
-         user: { except: [:destroy, :new, :create, :update, :edit] },
+         user: {
+           except: [:destroy, :new, :create, :update, :edit, :toggle_status]
+         },
          admin: :all
   before_action :set_blog,
                 only: [:show, :edit, :update, :destroy, :toggle_status]
@@ -12,7 +14,7 @@ class BlogsController < ApplicationController
   # GET /blogs.json
   def index
     @page_title = 'My Portfolio Blog'
-    @blogs = Blog.all
+    @blogs = Blog.page(params[:page]).per(5)
   end
 
   # GET /blogs/1

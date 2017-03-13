@@ -3,9 +3,17 @@
   <div class="col-md-6">
     <p><%= link_to "Give me a call", "tel:2164691035" %></p>
     <p><%= mail_to "christopher.brenner1@yahoo.com", "Drop me a line", subject: "PortfolioContact" %></p>
-    <p><%= link_to "Check out my work", "https://github.com/cbrenner04", target: "_blank" %></p>
-    <p><%= link_to "Browse my experience", "https://linkedin.com/in/christopher-brenner-mph-b3a12427", target: "_blank" %></p>
-    <p><%= link_to "Follow me", "https://twitter.com/cbrenner265", target: "_blank" %></p>
+    <div class="social-link">
+      <%= link_to "https://github.com/cbrenner04", target: "_blank" do %>
+        <%= fa_icon "github" %>
+      <% end %>
+      <%= link_to "https://linkedin.com/in/christopher-brenner-mph-b3a12427", target: "_blank" do %>
+        <%= fa_icon "linkedin" %>
+      <% end %>
+      <%= link_to "https://twitter.com/cbrenner265", target: "_blank" do %>
+        <%= fa_icon "twitter" %>
+      <% end %>
+    </div>
   </div>
   <div class="col-md-6">
     <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2971.6350440272195!2d-87.62565388468222!3d41.857681579223716!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x880e2c80d4925985%3A0x2a1501f9ac96fff0!2s1801+S+Michigan+Ave%2C+Chicago%2C+IL+60616!5e0!3m2!1sen!2sus!4v1489369859879"

@@ -20,18 +20,6 @@ RSpec.describe Portfolio, type: :model do
 
       expect(@portfolio).to_not be_valid
     end
-
-    it "is invalid when no main_image" do
-      @portfolio.main_image = nil
-
-      expect(@portfolio).to_not be_valid
-    end
-
-    it "is invalid when no thumb_image" do
-      @portfolio.thumb_image = nil
-
-      expect(@portfolio).to_not be_valid
-    end
   end
 end
 

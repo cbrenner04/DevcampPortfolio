@@ -28,11 +28,15 @@ class PortfoliosController < ApplicationController
   def create
     @portfolio_item = Portfolio.new(portfolio_params)
 
-    if @portfolio_item.save
-      redirect_to portfolios_path,
-                  notice: 'Portfolio item successfully created.'
-    else
-      render :new
+    respond_to do |format|
+      if @portfolio_item.save
+        format.html do
+          redirect_to portfolios_path,
+                      notice: 'Portfolio item successfully created.'
+        end
+      else
+        format.html { render :new }
+      end
     end
   end
 

@@ -47,3 +47,9 @@ portfolios.
   portfolio items
 - [jQuery UI Rails](https://github.com/jquery-ui-rails/jquery-ui-rails) required
   for HTML5 Sortable
+- [CarrierWave](https://github.com/carrierwaveuploader/carrierwave) for file
+  uploading
+- [CarrierWave AWS](https://github.com/sorentwo/carrierwave-aws) for AWS storage
+  of uploaded files
+- [MiniMagick](https://github.com/minimagick/minimagick) for image manipulation
+- [dotenv](https://github.com/bkeepers/dotenv) for storing environment variables

@@ -1,6 +1,5 @@
 # frozen_string_literal: true
 Rails.application.routes.draw do
-  resources :comments
   devise_for :users,
              path: '',
              path_names: {
@@ -22,6 +21,8 @@ Rails.application.routes.draw do
   get :contact, to: 'pages#contact'
   get 'portfolio/:id', to: 'portfolios#show', as: 'portfolio_show'
   get 'tweets', to: 'pages#tweets'
+
+  mount ActionCable.server => '/cable'
 
   root to: 'pages#home'
 end

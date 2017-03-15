@@ -54,3 +54,4 @@ portfolios.
 - [MiniMagick](https://github.com/minimagick/minimagick) for image manipulation
 - [dotenv](https://github.com/bkeepers/dotenv) for storing environment variables
 - [cocoon](https://github.com/nathanvda/cocoon) for JS elements in forms
+- [gritter](https://github.com/RobinBrouwer/gritter) for notices and alerts

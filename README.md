@@ -55,3 +55,5 @@ portfolios.
 - [dotenv](https://github.com/bkeepers/dotenv) for storing environment variables
 - [cocoon](https://github.com/nathanvda/cocoon) for JS elements in forms
 - [gritter](https://github.com/RobinBrouwer/gritter) for notices and alerts
+- [Twitter](https://github.com/sferik/twitter) for connecting with the Twitter
+  API

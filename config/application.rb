@@ -26,5 +26,7 @@ module DevcampPortfolio
       g.stylesheets     false
       g.javascripts     false
     end
+
+    config.eager_load_paths << Rails.root.join('lib')
   end
 end

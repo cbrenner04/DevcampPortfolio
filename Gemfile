@@ -64,3 +64,5 @@ gem 'mini_magick', '~> 4.6', '>= 4.6.1'
 gem 'cocoon', '~> 1.2', '>= 1.2.9'
 # notifications
 gem 'gritter', '~> 1.2'
+# twitter
+gem 'twitter', '~> 6.1'

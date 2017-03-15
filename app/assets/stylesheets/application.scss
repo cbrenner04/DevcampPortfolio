@@ -158,7 +158,7 @@ body {
   .masthead,
   .mastfoot,
   .cover-container {
-    width: 55rem;
+    width: 65rem;
   }
 }
 
@@ -200,10 +200,23 @@ body {
   z-index: -100;
   -webkit-transform: translateX(-50%) translateY(-50%);
   transform: translateX(-50%) translateY(-50%);
-  background: image-url('home_bg.png') no-repeat;
+  background: image-url('typing_poster.png') no-repeat;
   background-size: cover;
 }
 
 .app-footer {
   color: white;
+}
+
+.tweets {
+  color: black;
+  margin: 2rem;
+}
+
+.tweets a {
+  color: green;
+}
+
+.tweets > .card {
+  padding: 2rem;
 }

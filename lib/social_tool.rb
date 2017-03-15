@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+# functionality for getting tweets
 module SocialTool
   def self.twitter_search
     client = Twitter::REST::Client.new do |config|

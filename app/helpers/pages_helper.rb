@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 # no doc
 module PagesHelper
+  # rubocop:disable MethodLength
   def twitter_parser(tweet)
     regex = %r{
       \b
@@ -24,4 +25,5 @@ module PagesHelper
       "<a href='#{url}' target='_blank'>#{url}</a>"
     end.html_safe
   end
+  # rubocop:enable MethodLength
 end

@@ -66,3 +66,5 @@ gem 'cocoon', '~> 1.2', '>= 1.2.9'
 gem 'gritter', '~> 1.2'
 # twitter
 gem 'twitter', '~> 6.1'
+# redis
+gem 'redis', '~> 3.3', '>= 3.3.3'

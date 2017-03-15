@@ -26,7 +26,9 @@ portfolios.
 - [ ] Add SEO keywords to blog model (maybe portfolio as well)
 - [ ] Add shared error alert partial
 - [ ] Update styles for better responsiveness
-- [ ] Improve consistency in style
+- [ ] Improve consistency in style including navs and color schemes
+- [ ] Fix tweets styles
+- [ ] Update brands so they return you to home
 
 ## Add ons
 

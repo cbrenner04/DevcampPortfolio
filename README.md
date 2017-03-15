@@ -53,3 +53,4 @@ portfolios.
   of uploaded files
 - [MiniMagick](https://github.com/minimagick/minimagick) for image manipulation
 - [dotenv](https://github.com/bkeepers/dotenv) for storing environment variables
+- [cocoon](https://github.com/nathanvda/cocoon) for JS elements in forms

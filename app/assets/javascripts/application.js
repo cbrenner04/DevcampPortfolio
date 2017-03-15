@@ -15,6 +15,7 @@
 //= require jquery-ui
 //= require tether
 //= require bootstrap-sprockets
-//= html.sortable.min
+//= require html.sortable.min
+//= require cocoon
 //= require turbolinks
 //= require_tree .

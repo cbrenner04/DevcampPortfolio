@@ -15,7 +15,7 @@
 //= require jquery-ui
 //= require tether
 //= require bootstrap-sprockets
-//= require html.sortable.min
+//= html.sortable
 //= require cocoon
 //= require gritter
 //= require cable

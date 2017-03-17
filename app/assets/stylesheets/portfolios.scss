@@ -2,6 +2,16 @@
 @import "jquery-ui";
 @import "gritter";
 
+/*
+ * Globals
+ */
+
+@media (min-width: 48em) {
+  html {
+    font-size: 18px;
+  }
+}
+
 body {
   min-height: 75rem; /* Can be removed; just added for demo purposes */
   font-family: 'Roboto', sans-serif;
@@ -16,13 +26,38 @@ h6, .h6 {
   font-family: 'Roboto Slab', serif;
 }
 
-.navbar {
-  margin-bottom: 0;
+/* Nav links */
+.nav-link {
+  position: relative;
+  padding: 1rem;
+  font-weight: 500;
+  color: #cdddeb;
+}
+.nav-link:hover,
+.nav-link:focus {
+  color: #fff;
+  background-color: transparent;
+}
+
+/* Active state gets a caret at the bottom */
+.nav-link.active {
+  color: #fff;
+}
+.nav-link.active:after {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 0;
+  height: 0;
+  margin-left: -.3rem;
+  vertical-align: middle;
+  content: "";
+  border-right: .3rem solid transparent;
+  border-bottom: .3rem solid;
+  border-left: .3rem solid transparent;
 }
 
 .jumbotron {
-  padding-top: 6rem;
-  padding-bottom: 6rem;
   margin-bottom: 0;
   background-color: #fff;
 }

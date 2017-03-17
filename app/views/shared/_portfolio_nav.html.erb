@@ -1,31 +1,19 @@
-<div class="collapse bg-inverse" id="navbarHeader">
+<nav class="navbar navbar-toggleable-md navbar-light bg-faded">
+  <button class="navbar-toggler navbar-toggler-right" type="button"
+          data-toggle="collapse" data-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent" aria-expanded="false"
+          aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
   <div class="container">
-    <div class="row">
-      <div class="col-sm-8 py-4">
-        <h4 class="text-white">About</h4>
-        <p class="text-muted">
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Praesentium
-          facilis eligendi maiores itaque tempora? Voluptatem voluptates illum,
-          officiis pariatur quibusdam nesciunt repudiandae accusamus illo cumque
-          ipsam eum dicta consequuntur sapiente.
-        </p>
-      </div>
-      <div class="col-sm-4 py-4" style="text-align: right;">
-        <h4 class="text-white">Explore</h4>
-        <ul class="list-unstyled">
-          <%= nav_helper "text-white", "li" %>
-          <li><%= login_helper "text-white" %></li>
-        </ul>
-      </div>
+    <%= link_to "Christopher Brenner", root_path, class: "navbar-brand" %>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <%= nav_helper "nav-link", "li" %>
+        <%= login_helper "nav-link" %>
+      </ul>
     </div>
   </div>
-</div>
-<div class="navbar navbar-inverse bg-inverse">
-  <div class="container d-flex justify-content-between">
-    <a href="#" class="navbar-brand">Christopher Brenner</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarHeader" aria-controls="navbarHeader" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-  </div>
-</div>
-
+</nav>

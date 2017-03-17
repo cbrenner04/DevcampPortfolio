@@ -31,6 +31,7 @@ portfolios.
 - [ ] Update brands so they return you to home
 - [ ] Add form for creating Topics
 - [ ] Update styles on Topics index
+- [ ] Order sidebar topics by count of blogs
 
 ## Add ons
 

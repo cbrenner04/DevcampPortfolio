@@ -8,6 +8,7 @@ class BlogsController < ApplicationController
          admin: :all
   before_action :set_blog,
                 only: [:show, :edit, :update, :destroy, :toggle_status]
+  before_action :set_sidebar_topics, only: [:index, :new, :edit, :show]
   layout 'blog'
 
   def index
@@ -77,6 +78,10 @@ class BlogsController < ApplicationController
 
   def set_blog
     @blog = Blog.friendly.find(params[:id])
+  end
+
+  def set_sidebar_topics
+    @sidebar_topics = Topic.with_blogs
   end
 
   def blog_params

@@ -63,3 +63,7 @@ portfolios.
 - [gritter](https://github.com/RobinBrouwer/gritter) for notices and alerts
 - [Twitter](https://github.com/sferik/twitter) for connecting with the Twitter
   API
+- [Redis](https://github.com/redis/redis-rb) for use with action cable for
+  comments
+- [Redcarpet](https://github.com/vmg/redcarpet) for markdown parsing
+- [CodeRay](https://github.com/rubychan/coderay) for code syntax highlighting

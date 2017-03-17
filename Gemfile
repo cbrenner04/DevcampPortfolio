@@ -68,3 +68,7 @@ gem 'gritter', '~> 1.2'
 gem 'twitter', '~> 6.1'
 # redis
 gem 'redis', '~> 3.3', '>= 3.3.3'
+# markdown parser
+gem 'redcarpet', '~> 3.4'
+# code syntax highlighting
+gem 'coderay', '~> 1.1', '>= 1.1.1'

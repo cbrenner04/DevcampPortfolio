@@ -19,9 +19,7 @@ User.create!(
 p '1 admin user created'
 
 3.times do |index|
-  Topic.create!(
-    title: "Topic #{index}"
-  )
+  Topic.create!(title: "Topic #{index}")
 end
 
 p '3 topics created'
@@ -66,9 +64,7 @@ end
 p '9 portfolio items created'
 
 3.times do |index|
-  Portfolio.last.technologies.create!(
-    name: "Technology #{index}"
-  )
+  Portfolio.last.technologies.create!(name: "Technology #{index}")
 end
 
 p '3 technologies created'

@@ -72,3 +72,6 @@ gem 'redis', '~> 3.3', '>= 3.3.3'
 gem 'redcarpet', '~> 3.4'
 # code syntax highlighting
 gem 'coderay', '~> 1.1', '>= 1.1.1'
+
+# declare ruby version for heroku
+ruby '2.4.0'

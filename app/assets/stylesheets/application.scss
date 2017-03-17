@@ -209,7 +209,7 @@ body {
 }
 
 .tweets {
-  color: black;
+  color: grey;
   margin: 2rem;
 }
 
@@ -219,4 +219,17 @@ body {
 
 .tweets > .card {
   padding: 2rem;
+}
+
+.app-card-container {
+  color: grey;
+  text-align: left;
+}
+
+.app-card-container > .card {
+  padding: 2rem;
+}
+
+.app-card-container a {
+  color: grey;
 }

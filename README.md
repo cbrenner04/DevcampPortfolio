@@ -33,6 +33,7 @@ portfolios.
 - [ ] Update styles on Topics index
 - [ ] Order sidebar topics by count of blogs
 - [ ] Reduce amount of time gritter notification stay visible
+- [ ] DRY up admin actions in blogs and topics
 
 ## Add ons
 

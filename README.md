@@ -30,6 +30,7 @@ portfolios.
 - [ ] Fix tweets styles
 - [ ] Update brands so they return you to home
 - [ ] Add form for creating Topics
+- [ ] Update styles on Topics index
 
 ## Add ons
 

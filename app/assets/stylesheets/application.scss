@@ -133,15 +133,6 @@ body {
  */
 
 @media (min-width: 40em) {
-  /* Pull out the header and footer */
-  .masthead {
-    position: fixed;
-    top: 0;
-  }
-  .mastfoot {
-    position: fixed;
-    bottom: 0;
-  }
   /* Start the vertical centering */
   .site-wrapper-inner {
     vertical-align: middle;
@@ -235,6 +226,16 @@ body {
 }
 
 .card-block {
+  margin-top: .5rem;
+  margin-bottom: .5rem;
+}
+
+.skills {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+.skill {
   margin-top: .5rem;
   margin-bottom: .5rem;
 }

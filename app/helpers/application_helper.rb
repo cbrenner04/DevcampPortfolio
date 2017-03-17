@@ -10,12 +10,6 @@ module ApplicationHelper
     end
   end
 
-  def session_helper
-    return unless session[:source]
-    greeting = "Thanks for visiting from #{session[:source]}"
-    content_tag(:p, greeting, class: 'source-greeting')
-  end
-
   def nav_items
     [
       { url: root_path, title: 'Home' },

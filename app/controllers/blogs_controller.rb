@@ -17,9 +17,14 @@ class BlogsController < ApplicationController
   end
 
   def show
-    @blog = Blog.includes(:comments).friendly.find(params[:id])
-    @comment = Comment.new
-    @page_title = @blog.title
+    if logged_in?(:admin) || @blog.published?
+      @blog = Blog.includes(:comments).friendly.find(params[:id])
+      @comment = Comment.new
+      @page_title = @blog.title
+    else
+      redirect_to blogs_path,
+                  notice: 'You are not authorized to access this page'
+    end
   end
 
   def new
@@ -75,6 +80,6 @@ class BlogsController < ApplicationController
   end
 
   def blog_params
-    params.require(:blog).permit(:title, :body)
+    params.require(:blog).permit(:title, :body, :topic_id)
   end
 end

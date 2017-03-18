@@ -9,4 +9,10 @@ RSpec.feature "Home page" do
   scenario "visits" do
     expect(home_page.heading).to have_text "Welcome to my portfolio site"
   end
+
+  scenario "navigates to the about page" do
+    home_page.about_button.click
+
+    expect(current_path).to eq about_path
+  end
 end

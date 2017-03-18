@@ -1,5 +1,6 @@
 # frozen_string_literal: true
 require "simplecov"
+SimpleCov.minimum_coverage 95
 SimpleCov.start
 # This file is copied to spec/ when you run 'rails generate rspec:install'
 ENV["RAILS_ENV"] ||= "test"
@@ -65,6 +66,7 @@ RSpec.configure do |config|
   # config.filter_gems_from_backtrace("gem name")
 
   [:controller, :view, :request].each do |type|
+    config.include Devise::Test::IntegrationHelpers, type: :feature
     config.include ::Rails::Controller::Testing::TestProcess, type: type
     config.include ::Rails::Controller::Testing::TemplateAssertions, type: type
     config.include ::Rails::Controller::Testing::Integration, type: type

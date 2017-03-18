@@ -150,6 +150,8 @@ GEM
       activerecord
       kaminari-core (= 1.0.1)
     kaminari-core (1.0.1)
+    launchy (2.4.3)
+      addressable (~> 2.3)
     listen (3.0.8)
       rb-fsevent (~> 0.9, >= 0.9.4)
       rb-inotify (~> 0.9, >= 0.9.7)
@@ -332,6 +334,7 @@ DEPENDENCIES
   jquery-rails
   jquery-ui-rails (~> 6.0, >= 6.0.1)
   kaminari (~> 1.0, >= 1.0.1)
+  launchy (~> 2.4, >= 2.4.3)
   listen (~> 3.0.5)
   mini_magick (~> 4.6, >= 4.6.1)
   petergate (~> 1.7)

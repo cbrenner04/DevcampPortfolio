@@ -20,8 +20,8 @@ portfolios.
 - [x] Fix navbar dropdown on blog and portfolio pages
 - [ ] Update Pages to separate controllers with index or show actions
 - [ ] Add testing
-- [ ] Remove scaffolded files that are unnecessary
-- [ ] Add model validations
+- [x] Remove scaffolded files that are unnecessary
+- [x] Add model validations
 - [ ] Remove API code in controllers where unneeded
 - [ ] Remove custom route for portfolios show
 - [ ] Update blogs#toggle_status to its own controller
@@ -36,17 +36,11 @@ portfolios.
 - [ ] Order sidebar topics by count of blogs
 - [ ] Reduce amount of time gritter notification stay visible
 - [ ] DRY up admin actions in blogs and topics
+- [ ] Improve documentation (especially `#no doc`)
 
-## Add ons
-
-*NOTE*: Some of these are in the tutorial, some are not
+## Tutorial add ons
 
 - [FriendlyId](https://github.com/norman/friendly_id) for slugs in Blog urls
-- [FactoryGirl](https://github.com/thoughtbot/factory_girl_rails) for test data
-- [Capybara](https://github.com/teamcapybara/capybara) for acceptance testing
-- [SitePrism](https://github.com/natritmeyer/site_prism) for page object models
-  for feature specs
-- [SimpleCov](https://github.com/colszowka/simplecov) for code coverage analysis
 - [Devise](https://github.com/plataformatec/devise) for authentication
 - [Bootstrap](https://github.com/twbs/bootstrap-rubygem) for styling
 - [Petergate](https://github.com/elorest/petergate) for authorization
@@ -70,3 +64,20 @@ portfolios.
   comments
 - [Redcarpet](https://github.com/vmg/redcarpet) for markdown parsing
 - [CodeRay](https://github.com/rubychan/coderay) for code syntax highlighting
+
+## My add ons
+
+- [RuboCop](https://github.com/bbatsov/rubocop) for linting
+- [rspec-rails](https://github.com/rspec/rspec-rails) for testing
+- [Rails::Controller::Testing](https://github.com/rails/rails-controller-testing)
+  for controller testing
+- [factory_girl_rails](https://github.com/thoughtbot/factory_girl_rails) for
+  test data
+- [SimpleCov](https://github.com/colszowka/simplecov) for test coverage
+  reporting
+- [Capybara](https://github.com/teamcapybara/capybara) for acceptance testing
+- [SitePrism](https://github.com/natritmeyer/site_prism) for page object models
+  for feature specs
+- [SimpleCov](https://github.com/colszowka/simplecov) for code coverage analysis
+- [Launchy](https://github.com/copiousfreetime/launchy) for launching screen
+  captures automatically when testing

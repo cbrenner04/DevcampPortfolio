@@ -108,6 +108,7 @@ h6, .h6 {
 
 @media (min-width: 48em) {
   .masthead-brand {
+    font-size: 2rem;
     float: left;
   }
   .nav-masthead {
@@ -258,4 +259,9 @@ h6, .h6 {
   .home {
     margin-top: 25vh;
   }
+}
+
+.toggle-icon {
+  color: grey;
+  font-size: 2rem;
 }

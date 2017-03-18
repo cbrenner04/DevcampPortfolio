@@ -2,7 +2,8 @@
 require 'rails_helper'
 
 RSpec.describe BlogsController, type: :controller do
-  let(:valid_attributes) { { title: 'Foo', body: 'Bar' } }
+  let(:topic) { create :topic }
+  let(:valid_attributes) { { title: 'Foo', body: 'Bar', topic_id: topic.id } }
 
   let(:invalid_attributes) { { title: nil } }
   let(:valid_session) { {} }

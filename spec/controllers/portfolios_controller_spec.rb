@@ -4,11 +4,11 @@ require 'rails_helper'
 RSpec.describe PortfoliosController, type: :controller do
   let(:valid_attributes) do
     {
-      title: "Foo",
-      subtitle: "Bar",
-      body: "Baz",
-      main_image: "f@e.com",
-      thumb_image: "f@e.com"
+      title: 'Foo',
+      subtitle: 'Bar',
+      body: 'Baz',
+      main_image: 'f@e.com',
+      thumb_image: 'f@e.com'
     }
   end
 
@@ -65,14 +65,18 @@ RSpec.describe PortfoliosController, type: :controller do
       end
 
       it 'assigns a newly created portfolio as @portfolio' do
-        post :create, params: { portfolio: valid_attributes }, session: valid_session
+        post :create, params: {
+          portfolio: valid_attributes
+        }, session: valid_session
         expect(assigns(:portfolio_item)).to be_a(Portfolio)
 
         expect(assigns(:portfolio_item)).to be_persisted
       end
 
       it 'redirects to the created portfolio' do
-        post :create, params: { portfolio: valid_attributes }, session: valid_session
+        post :create, params: {
+          portfolio: valid_attributes
+        }, session: valid_session
 
         expect(response).to redirect_to portfolios_path
       end
@@ -155,13 +159,17 @@ RSpec.describe PortfoliosController, type: :controller do
     it 'destroys the requested portfolio' do
       portfolio = create :portfolio
       expect do
-        delete :destroy, params: { id: portfolio.to_param }, session: valid_session
+        delete :destroy, params: {
+          id: portfolio.to_param
+        }, session: valid_session
       end.to change(Portfolio, :count).by(-1)
     end
 
     it 'redirects to the portfolios list' do
       portfolio = create :portfolio
-      delete :destroy, params: { id: portfolio.to_param }, session: valid_session
+      delete :destroy, params: {
+        id: portfolio.to_param
+      }, session: valid_session
 
       expect(response).to redirect_to(portfolios_url)
     end

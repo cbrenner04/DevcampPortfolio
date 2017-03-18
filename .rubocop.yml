@@ -1,8 +1,12 @@
 AllCops:
   Exclude:
     - 'db/**/*'
-    - 'spec/**/*'
   TargetRubyVersion: 2.3
+  DisplayCopNames: true
 
 Rails:
   Enabled: true
+
+BlockLength:
+  Exclude:
+    - spec/**/*

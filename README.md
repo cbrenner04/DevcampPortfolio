@@ -17,7 +17,7 @@ portfolios.
 *NOTE*: These are things that are updated from the tutorial base application
 
 - [ ] Fix responsive issues with navbar on "main" pages
-- [ ] Fix navbar dropdown on blog and portfolio pages
+- [x] Fix navbar dropdown on blog and portfolio pages
 - [ ] Update Pages to separate controllers with index or show actions
 - [ ] Add testing
 - [ ] Remove scaffolded files that are unnecessary

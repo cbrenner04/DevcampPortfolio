@@ -5,5 +5,6 @@ FactoryGirl.define do
     body 'Bar'
     slug 'foo'
     status 'draft'
+    topic
   end
 end

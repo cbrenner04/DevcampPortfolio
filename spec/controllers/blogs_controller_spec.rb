@@ -1,9 +1,9 @@
 # frozen_string_literal: true
-require 'rails_helper'
+require "rails_helper"
 
 RSpec.describe BlogsController, type: :controller do
   let(:topic) { create :topic }
-  let(:valid_attributes) { { title: 'Foo', body: 'Bar', topic_id: topic.id } }
+  let(:valid_attributes) { { title: "Foo", body: "Bar", topic_id: topic.id } }
 
   let(:invalid_attributes) { { title: nil } }
   let(:valid_session) { {} }
@@ -12,8 +12,8 @@ RSpec.describe BlogsController, type: :controller do
 
   before { sign_in user }
 
-  describe 'GET #index' do
-    it 'assigns all blogs as @blogs' do
+  describe "GET #index" do
+    it "assigns all blogs as @blogs" do
       blog = create :blog
       get :index, params: {}, session: valid_session
 
@@ -21,8 +21,8 @@ RSpec.describe BlogsController, type: :controller do
     end
   end
 
-  describe 'GET #show' do
-    it 'assigns the requested Blog as @Blog' do
+  describe "GET #show" do
+    it "assigns the requested Blog as @Blog" do
       blog = create :blog
       get :show, params: { id: blog.to_param }, session: valid_session
 
@@ -30,16 +30,16 @@ RSpec.describe BlogsController, type: :controller do
     end
   end
 
-  describe 'GET #new' do
-    it 'assigns a new blog as @blog' do
+  describe "GET #new" do
+    it "assigns a new blog as @blog" do
       get :new, params: {}, session: valid_session
 
       expect(assigns(:blog)).to be_a_new(Blog)
     end
   end
 
-  describe 'GET #edit' do
-    it 'assigns the requested blog as @blog' do
+  describe "GET #edit" do
+    it "assigns the requested blog as @blog" do
       blog = create :blog
       get :edit, params: { id: blog.to_param }, session: valid_session
 
@@ -47,9 +47,9 @@ RSpec.describe BlogsController, type: :controller do
     end
   end
 
-  describe 'POST #create' do
-    context 'with valid params' do
-      it 'creates a new blog' do
+  describe "POST #create" do
+    context "with valid params" do
+      it "creates a new blog" do
         expect do
           post :create, params: {
             blog: valid_attributes
@@ -57,22 +57,22 @@ RSpec.describe BlogsController, type: :controller do
         end.to change(Blog, :count).by(1)
       end
 
-      it 'assigns a newly created blog as @blog' do
+      it "assigns a newly created blog as @blog" do
         post :create, params: { blog: valid_attributes }, session: valid_session
         expect(assigns(:blog)).to be_a(Blog)
 
         expect(assigns(:blog)).to be_persisted
       end
 
-      it 'redirects to the created Blog' do
+      it "redirects to the created Blog" do
         post :create, params: { blog: valid_attributes }, session: valid_session
 
         expect(response).to redirect_to(Blog.last)
       end
     end
 
-    context 'with invalid params' do
-      it 'assigns a newly created but unsaved blog as @blog' do
+    context "with invalid params" do
+      it "assigns a newly created but unsaved blog as @blog" do
         post :create, params: {
           blog: invalid_attributes
         }, session: valid_session
@@ -85,26 +85,26 @@ RSpec.describe BlogsController, type: :controller do
           blog: invalid_attributes
         }, session: valid_session
 
-        expect(response).to render_template('new')
+        expect(response).to render_template("new")
       end
     end
   end
 
-  describe 'PUT #update' do
-    context 'with valid params' do
-      let(:new_attributes) { { title: 'Baz' } }
+  describe "PUT #update" do
+    context "with valid params" do
+      let(:new_attributes) { { title: "Baz" } }
 
-      it 'updates the requested blog' do
+      it "updates the requested blog" do
         blog = create :blog
         put :update, params: {
           id: blog.to_param, blog: new_attributes
         }, session: valid_session
         blog.reload
 
-        expect(blog.title).to eq 'Baz'
+        expect(blog.title).to eq "Baz"
       end
 
-      it 'assigns the requested Blog as @Blog' do
+      it "assigns the requested Blog as @Blog" do
         blog = create :blog
         put :update, params: {
           id: blog.to_param, blog: valid_attributes
@@ -113,7 +113,7 @@ RSpec.describe BlogsController, type: :controller do
         expect(assigns(:blog)).to eq(blog)
       end
 
-      it 'redirects to the Blog' do
+      it "redirects to the Blog" do
         blog = create :blog
         put :update, params: {
           id: blog.to_param, blog: valid_attributes
@@ -123,8 +123,8 @@ RSpec.describe BlogsController, type: :controller do
       end
     end
 
-    context 'with invalid params' do
-      it 'assigns the Blog as @Blog' do
+    context "with invalid params" do
+      it "assigns the Blog as @Blog" do
         blog = create :blog
         put :update, params: {
           id: blog.to_param, blog: invalid_attributes
@@ -139,20 +139,20 @@ RSpec.describe BlogsController, type: :controller do
           id: blog.to_param, blog: invalid_attributes
         }, session: valid_session
 
-        expect(response).to render_template('edit')
+        expect(response).to render_template("edit")
       end
     end
   end
 
-  describe 'DELETE #destroy' do
-    it 'destroys the requested Blog' do
+  describe "DELETE #destroy" do
+    it "destroys the requested Blog" do
       blog = create :blog
       expect do
         delete :destroy, params: { id: blog.to_param }, session: valid_session
       end.to change(Blog, :count).by(-1)
     end
 
-    it 'redirects to the Blogs list' do
+    it "redirects to the Blogs list" do
       blog = create :blog
       delete :destroy, params: { id: blog.to_param }, session: valid_session
 

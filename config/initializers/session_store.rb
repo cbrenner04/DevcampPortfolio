@@ -4,4 +4,4 @@
 Rails
   .application
   .config
-  .session_store :cookie_store, key: '_DevcampPortfolio_session'
+  .session_store :cookie_store, key: "_DevcampPortfolio_session"

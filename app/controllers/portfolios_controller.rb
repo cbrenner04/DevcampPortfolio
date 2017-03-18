@@ -5,7 +5,7 @@ class PortfoliosController < ApplicationController
          user: { except: [:destroy, :new, :create, :update, :edit, :sort] },
          admin: :all
   before_action :set_portfolio, only: [:show, :edit, :update, :destroy]
-  layout 'portfolio'
+  layout "portfolio"
 
   def index
     @portfolio_items = Portfolio.by_position
@@ -29,7 +29,7 @@ class PortfoliosController < ApplicationController
 
     if @portfolio_item.save
       redirect_to portfolios_path,
-                  notice: 'Portfolio item successfully created.'
+                  notice: "Portfolio item successfully created."
     else
       render :new
     end
@@ -40,7 +40,7 @@ class PortfoliosController < ApplicationController
   def update
     if @portfolio_item.update(portfolio_params)
       redirect_to portfolios_path,
-                  notice: 'Portfolio item successfully updated.'
+                  notice: "Portfolio item successfully updated."
     else
       render :edit
     end
@@ -48,7 +48,7 @@ class PortfoliosController < ApplicationController
 
   def destroy
     @portfolio_item.destroy
-    redirect_to portfolios_path, notice: 'Portfolio item destroyed.'
+    redirect_to portfolios_path, notice: "Portfolio item destroyed."
   end
 
   private

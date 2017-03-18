@@ -8,7 +8,7 @@ module DefaultPageContent
   end
 
   def set_page_defaults
-    @page_title = 'Christopher Brenner Portfolio'
-    @seo_keywords = 'Christopher Brenner portfolio'
+    @page_title = "Christopher Brenner Portfolio"
+    @seo_keywords = "Christopher Brenner portfolio"
   end
 end

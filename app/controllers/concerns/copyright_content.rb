@@ -8,7 +8,7 @@ module CopyrightContent
   end
 
   def set_copyright
-    @copyright = copyright('Christopher Brenner', 'All rights reserved')
+    @copyright = copyright("Christopher Brenner", "All rights reserved")
   end
 
   def copyright(name, message)

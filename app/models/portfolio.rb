@@ -6,7 +6,7 @@ class Portfolio < ApplicationRecord
   accepts_nested_attributes_for :technologies,
                                 allow_destroy: true,
                                 reject_if: lambda { |attrs|
-                                  attrs['name'].blank?
+                                  attrs["name"].blank?
                                 }
 
   validates :title, :body, presence: true

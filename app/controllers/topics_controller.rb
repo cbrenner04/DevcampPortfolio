@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 # actions for Topics which are related to blogs
 class TopicsController < ApplicationController
-  layout 'blog'
+  layout "blog"
 
   before_action :set_sidebar_topics
 

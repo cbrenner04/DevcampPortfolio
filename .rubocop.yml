@@ -10,3 +10,6 @@ Rails:
 BlockLength:
   Exclude:
     - spec/**/*
+
+StringLiterals:
+  EnforcedStyle: double_quotes

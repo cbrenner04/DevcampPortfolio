@@ -3,11 +3,11 @@ Rails.application.routes.draw do
   resources :topics, only: [:index, :show]
 
   devise_for :users,
-             path: '',
+             path: "",
              path_names: {
-               sign_in: 'login',
-               sign_out: 'logout',
-               sign_up: 'register'
+               sign_in: "login",
+               sign_out: "logout",
+               sign_up: "register"
              }
 
   resources :whatevers
@@ -19,12 +19,12 @@ Rails.application.routes.draw do
     put :sort, on: :collection
   end
 
-  get :about, to: 'pages#about'
-  get :contact, to: 'pages#contact'
-  get 'portfolio/:id', to: 'portfolios#show', as: 'portfolio_show'
-  get 'tweets', to: 'pages#tweets'
+  get :about, to: "pages#about"
+  get :contact, to: "pages#contact"
+  get "portfolio/:id", to: "portfolios#show", as: "portfolio_show"
+  get "tweets", to: "pages#tweets"
 
-  mount ActionCable.server => '/cable'
+  mount ActionCable.server => "/cable"
 
-  root to: 'pages#home'
+  root to: "pages#home"
 end

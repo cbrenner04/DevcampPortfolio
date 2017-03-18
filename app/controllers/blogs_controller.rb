@@ -9,10 +9,10 @@ class BlogsController < ApplicationController
   before_action :set_blog,
                 only: [:show, :edit, :update, :destroy, :toggle_status]
   before_action :set_sidebar_topics, only: [:index, :new, :edit, :show]
-  layout 'blog'
+  layout "blog"
 
   def index
-    @page_title = 'My Portfolio Blog'
+    @page_title = "My Portfolio Blog"
     blogs = logged_in?(:admin) ? Blog.descending : Blog.descending.published
     @blogs = blogs.page(params[:page]).per(5)
   end
@@ -24,7 +24,7 @@ class BlogsController < ApplicationController
       @page_title = @blog.title
     else
       redirect_to blogs_path,
-                  notice: 'You are not authorized to access this page'
+                  notice: "You are not authorized to access this page"
     end
   end
 
@@ -39,7 +39,7 @@ class BlogsController < ApplicationController
 
     respond_to do |format|
       if @blog.save
-        format.html { redirect_to @blog, notice: 'Blog successfully created.' }
+        format.html { redirect_to @blog, notice: "Blog successfully created." }
         format.json { render :show, status: :created, location: @blog }
       else
         format.html { render :new }
@@ -51,7 +51,7 @@ class BlogsController < ApplicationController
   def update
     respond_to do |format|
       if @blog.update(blog_params)
-        format.html { redirect_to @blog, notice: 'Blog successfully updated.' }
+        format.html { redirect_to @blog, notice: "Blog successfully updated." }
         format.json { render :show, status: :ok, location: @blog }
       else
         format.html { render :edit }
@@ -63,7 +63,7 @@ class BlogsController < ApplicationController
   def destroy
     @blog.destroy
     respond_to do |format|
-      format.html { redirect_to blogs_url, notice: 'Blog destroyed.' }
+      format.html { redirect_to blogs_url, notice: "Blog destroyed." }
       format.json { head :no_content }
     end
   end
@@ -71,7 +71,7 @@ class BlogsController < ApplicationController
   # TODO: needs test
   def toggle_status
     @blog.draft? ? @blog.published! : @blog.draft!
-    redirect_to blogs_url, notice: 'Blog status has been updated'
+    redirect_to blogs_url, notice: "Blog status has been updated"
   end
 
   private

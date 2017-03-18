@@ -9,9 +9,9 @@ module PortfoliosHelper
   def portfolio_img(image:, type:)
     if image.model.main_image? || image.model.thumb_image?
       image
-    elsif type == 'thumb'
+    elsif type == "thumb"
       image_generator(height: 200, width: 350)
-    elsif type == 'main'
+    elsif type == "main"
       image_generator(height: 400, width: 600)
     end
   end

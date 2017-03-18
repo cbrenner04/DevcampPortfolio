@@ -265,8 +265,16 @@ h6, .h6 {
   .home {
     margin-top: 10vh;
   }
+  .masthead-brand {
+    font-size: 1rem;
+  }
 }
 
 .navbar {
   background-color: transparent;
+}
+
+.navbar-toggler-icon {
+  color: grey;
+  font-size: 2rem;
 }

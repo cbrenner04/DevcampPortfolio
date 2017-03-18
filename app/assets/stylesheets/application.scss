@@ -278,3 +278,12 @@ h6, .h6 {
   color: grey;
   font-size: 2rem;
 }
+
+@media (max-width: 767px) {
+  #background {
+    display:none !important;
+  }
+  .background-container {
+    background: image-url('newtypingshot.png') no-repeat;
+  }
+}

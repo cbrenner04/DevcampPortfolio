@@ -3,7 +3,7 @@
 class BlogsController < ApplicationController
   access all: [:show, :index],
          user: {
-           except: [:destroy, :new, :create, :update, :edit, :toggle_status]
+           except: [:destroy, :new, :create, :update, :edit]
          },
          admin: :all
   before_action :set_blog,
@@ -55,12 +55,6 @@ class BlogsController < ApplicationController
   def destroy
     @blog.destroy
     redirect_to blogs_url, notice: "Blog destroyed."
-  end
-
-  # TODO: needs test
-  def toggle_status
-    @blog.draft? ? @blog.published! : @blog.draft!
-    redirect_to blogs_url, notice: "Blog status has been updated"
   end
 
   private

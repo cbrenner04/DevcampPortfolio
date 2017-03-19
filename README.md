@@ -18,13 +18,13 @@ portfolios.
 
 - [x] Fix responsive issues with navbar on "main" pages
 - [x] Fix navbar dropdown on blog and portfolio pages
-- [ ] Update Pages to separate controllers with index or show actions
+- [x] Update Pages to separate controllers with index or show actions
 - [x] Add testing
 - [x] Remove scaffolded files that are unnecessary
 - [x] Add model validations
-- [ ] Remove API code in controllers where unneeded
+- [x] Remove API code in controllers where unneeded
 - [x] Remove custom route for portfolios show
-- [ ] Update blogs#toggle_status to its own controller
+- [x] Update blogs#toggle_status to its own controller
 - [ ] Add SEO keywords to blog model (maybe portfolio as well)
 - [ ] Add shared error alert partial
 - [ ] Update styles for better responsiveness

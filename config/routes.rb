@@ -10,7 +10,7 @@ Rails.application.routes.draw do
 
   resource :about, only: :show
   resources :blogs do
-    get :toggle_status, on: :member
+    resource :toggle_status, only: :show
   end
   resource :contact, only: :show
   resource :home, only: :show

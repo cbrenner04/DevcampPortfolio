@@ -1,5 +1,5 @@
 # frozen_string_literal: true
-# TODO: no doc
+# helpers for application views
 module ApplicationHelper
   def login_helper(style = "")
     if current_user.is_a? GuestUser

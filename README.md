@@ -16,10 +16,10 @@ portfolios.
 
 *NOTE*: These are things that are updated from the tutorial base application
 
-- [ ] Fix responsive issues with navbar on "main" pages
+- [x] Fix responsive issues with navbar on "main" pages
 - [x] Fix navbar dropdown on blog and portfolio pages
 - [ ] Update Pages to separate controllers with index or show actions
-- [ ] Add testing
+- [x] Add testing
 - [x] Remove scaffolded files that are unnecessary
 - [x] Add model validations
 - [ ] Remove API code in controllers where unneeded
@@ -36,7 +36,8 @@ portfolios.
 - [ ] Order sidebar topics by count of blogs
 - [ ] Reduce amount of time gritter notification stay visible
 - [ ] DRY up admin actions in blogs and topics
-- [ ] Improve documentation (especially `#no doc`)
+- [x] Improve documentation (especially `#no doc`)
+- [ ] DRY up nav bars
 
 ## Tutorial add ons
 

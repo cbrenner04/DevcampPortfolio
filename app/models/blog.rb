@@ -1,5 +1,5 @@
 # frozen_string_literal: true
-# TODO: no doc
+# model for blogs
 class Blog < ApplicationRecord
   extend FriendlyId
 

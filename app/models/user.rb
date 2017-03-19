@@ -1,5 +1,5 @@
 # frozen_string_literal: true
-# TODO: no doc
+# model for users
 class User < ApplicationRecord
   petergate(roles: [:admin], multiple: false)
 

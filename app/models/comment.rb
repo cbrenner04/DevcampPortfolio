@@ -1,5 +1,5 @@
 # frozen_string_literal: true
-# TODO: no doc
+# model for comments which relate to blogs and users
 class Comment < ApplicationRecord
   belongs_to :user
   belongs_to :blog

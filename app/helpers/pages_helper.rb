@@ -1,5 +1,5 @@
 # frozen_string_literal: true
-# TODO: no doc
+# helpers for pages views
 module PagesHelper
   # rubocop:disable MethodLength
   def twitter_parser(tweet)

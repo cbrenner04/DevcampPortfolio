@@ -1,5 +1,5 @@
 # frozen_string_literal: true
-# TODO: no doc
+# model for portfolios
 class Portfolio < ApplicationRecord
   has_many :technologies, dependent: :destroy
 

@@ -6,7 +6,5 @@ RSpec.feature "Tweets page" do
 
   background { tweets_page.load }
 
-  scenario "visits" do
-    expect(tweets_page.heading).to have_text "Tweets"
-  end
+  scenario { expect(tweets_page.heading).to have_text "Tweets" }
 end

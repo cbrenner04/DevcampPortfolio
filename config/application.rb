@@ -17,7 +17,7 @@ require "dotenv-rails"
 Bundler.require(*Rails.groups)
 
 module DevcampPortfolio
-  # no doc
+  # TODO: no doc
   class Application < Rails::Application
     config.generators do |g|
       g.orm             :active_record

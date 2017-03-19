@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 require "simplecov"
-SimpleCov.minimum_coverage 95
+SimpleCov.minimum_coverage 98
 SimpleCov.start
 # This file is copied to spec/ when you run 'rails generate rspec:install'
 ENV["RAILS_ENV"] ||= "test"
@@ -13,7 +13,12 @@ require "support/factory_girl"
 require "capybara/rails"
 require "capybara/rspec"
 require "site_prism"
+require "capybara/poltergeist"
 # Add additional requires below this line. Rails is not loaded until this point!
+Capybara.javascript_driver = :poltergeist
+Capybara.register_driver :poltergeist do |app|
+  Capybara::Poltergeist::Driver.new(app, js_errors: false)
+end
 
 Dir[Rails.root.join("spec", "support", "**", "*.rb")].each { |f| require f }
 

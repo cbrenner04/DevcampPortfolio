@@ -6,7 +6,5 @@ RSpec.feature "Contact page" do
 
   background { contact_page.load }
 
-  scenario "visits" do
-    expect(contact_page.heading).to have_text "Contact"
-  end
+  scenario { expect(contact_page.heading).to have_text "Contact" }
 end

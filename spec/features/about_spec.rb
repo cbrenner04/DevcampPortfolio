@@ -6,7 +6,5 @@ RSpec.feature "About page" do
 
   background { about_page.load }
 
-  scenario "visits" do
-    expect(about_page.heading).to have_text "About me"
-  end
+  scenario { expect(about_page.heading).to have_text "About me" }
 end

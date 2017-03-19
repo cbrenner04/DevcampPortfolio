@@ -1,5 +1,5 @@
 # frozen_string_literal: true
-# no doc
+# TODO: no doc
 class ApplicationRecord < ActiveRecord::Base
   self.abstract_class = true
 end

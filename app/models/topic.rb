@@ -1,5 +1,5 @@
 # frozen_string_literal: true
-# no doc
+# TODO: no doc
 class Topic < ApplicationRecord
   has_many :blogs
   validates :title, presence: true

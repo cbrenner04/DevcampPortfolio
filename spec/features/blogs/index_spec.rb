@@ -19,17 +19,11 @@ RSpec.feature "Blogs index" do
       expect(current_path).to eq new_blog_path
     end
 
-    scenario "can change from draft to published" do
-      expect(index_page).to have_status_icon
-    end
+    scenario { expect(index_page).to have_status_icon }
 
-    scenario "has access to edit icon" do
-      expect(index_page).to have_edit_icon
-    end
+    scenario { expect(index_page).to have_edit_icon }
 
-    scenario "can delete" do
-      expect(index_page).to have_delete_icon
-    end
+    scenario { expect(index_page).to have_delete_icon }
 
     scenario "navigates to show" do
       click_on blog.title
@@ -59,21 +53,13 @@ RSpec.feature "Blogs index" do
       index_page.load
     end
 
-    scenario "navigates to new form" do
-      expect(index_page).to_not have_new_link
-    end
+    scenario { expect(index_page).to_not have_new_link }
 
-    scenario "can change from draft to published" do
-      expect(index_page).to_not have_status_icon
-    end
+    scenario { expect(index_page).to_not have_status_icon }
 
-    scenario "has access to edit icon" do
-      expect(index_page).to_not have_edit_icon
-    end
+    scenario { expect(index_page).to_not have_edit_icon }
 
-    scenario "can delete" do
-      expect(index_page).to_not have_delete_icon
-    end
+    scenario { expect(index_page).to_not have_delete_icon }
 
     scenario "navigates to show" do
       click_on blog.title
@@ -100,21 +86,13 @@ RSpec.feature "Blogs index" do
       index_page.load
     end
 
-    scenario "navigates to new form" do
-      expect(index_page).to_not have_new_link
-    end
+    scenario { expect(index_page).to_not have_new_link }
 
-    scenario "can change from draft to published" do
-      expect(index_page).to_not have_status_icon
-    end
+    scenario { expect(index_page).to_not have_status_icon }
 
-    scenario "has access to edit icon" do
-      expect(index_page).to_not have_edit_icon
-    end
+    scenario { expect(index_page).to_not have_edit_icon }
 
-    scenario "can delete" do
-      expect(index_page).to_not have_delete_icon
-    end
+    scenario { expect(index_page).to_not have_delete_icon }
 
     scenario "navigates to show" do
       click_on blog.title

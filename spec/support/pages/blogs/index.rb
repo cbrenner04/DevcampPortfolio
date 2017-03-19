@@ -3,6 +3,7 @@ module Pages
   module Blogs
     class Index < SitePrism::Page
       set_url "/blogs"
+      element :heading, "h2"
       element :new_link, "a", text: "New Blog"
       element :status_icon, ".fa-file-text"
       element :edit_icon, ".fa-pencil-square-o"

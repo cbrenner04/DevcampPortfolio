@@ -1,5 +1,5 @@
 # frozen_string_literal: true
-# no doc
+# TODO: no doc
 module BlogsHelper
   def gravatar_helper(user)
     image_tag(

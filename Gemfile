@@ -74,6 +74,8 @@ gem "redcarpet", "~> 3.4"
 gem "coderay", "~> 1.1", ">= 1.1.1"
 # to launch `save_and_open_page`
 gem "launchy", "~> 2.4", ">= 2.4.3"
+# for headless browser test
+gem "poltergeist", "~> 1.13"
 
 # declare ruby version for heroku
 ruby "2.4.0"

@@ -1,5 +1,5 @@
 # frozen_string_literal: true
-# no doc
+# TODO: no doc
 class Comment < ApplicationRecord
   belongs_to :user
   belongs_to :blog

@@ -1,5 +1,5 @@
 # frozen_string_literal: true
-# no doc
+# TODO: no doc
 class ApplicationMailer < ActionMailer::Base
   default from: "from@example.com"
   layout "mailer"

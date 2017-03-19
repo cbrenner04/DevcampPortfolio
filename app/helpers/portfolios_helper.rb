@@ -1,5 +1,5 @@
 # frozen_string_literal: true
-# no doc
+# TODO: no doc
 module PortfoliosHelper
   def image_generator(height:, width:)
     "https://placeholdit.imgix.net/~text?txtsize=33&txt=#{width}%C3%97" \

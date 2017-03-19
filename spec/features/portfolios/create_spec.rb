@@ -1,12 +1,11 @@
 # frozen_string_literal: true
 require "rails_helper"
 
-RSpec.feature "Create blog" do
+RSpec.feature "Create portfolio" do
+  let(:new_page) { Pages::Portfolios::New.new }
+  let(:form_page) { Pages::Portfolios::Form.new }
+  let(:index_page) { Pages::Portfolios::Index.new }
   let(:home_page) { Pages::Home.new }
-  let(:new_page) { Pages::Blogs::New.new }
-  let(:form_page) { Pages::Blogs::Form.new }
-  let(:show_page) { Pages::Blogs::Show.new }
-  let!(:topic) { create :topic }
 
   context "when an admin is logged in" do
     let(:user) { create :user, roles: "admin" }
@@ -16,19 +15,20 @@ RSpec.feature "Create blog" do
       new_page.load
     end
 
-    scenario "creates blog successfully" do
-      form_page.title.set "Foo"
-      form_page.topic.select topic.title
-      form_page.publish.click
+    scenario "creates a new portfolio" do
+      form_page.title.set "New portfolio"
+      form_page.subtitle.set "Foo"
+      expect(form_page).to have_main_image_button
+      expect(form_page).to have_thumb_image_button
       form_page.body.set "Bar"
       form_page.submit.click
 
-      expect(show_page).to have_heading(text: "Foo")
+      expect(index_page).to have_link_to_show(text: "New portfolio")
     end
   end
 
   context "when a non admin is logged in" do
-    let(:user) { create :user, roles: "" }
+    let(:user) { create :user, roles: "user" }
 
     before do
       sign_in user

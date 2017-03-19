@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 module ApplicationCable
-  # no doc
+  # TODO: no doc
   class Connection < ActionCable::Connection::Base
     identified_by :current_user
 

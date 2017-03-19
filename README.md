@@ -25,19 +25,19 @@ portfolios.
 - [x] Remove API code in controllers where unneeded
 - [x] Remove custom route for portfolios show
 - [x] Update blogs#toggle_status to its own controller
-- [ ] Add SEO keywords to blog model (maybe portfolio as well)
-- [ ] Add shared error alert partial
 - [x] Update styles for better responsiveness
-- [ ] Improve consistency in style including navs and color schemes
 - [x] Fix tweets styles
 - [x] Update brands so they return you to home
-- [ ] Add form for creating Topics
+- [x] Add form for creating Topics
 - [x] Update styles on Topics index
-- [ ] Order sidebar topics by count of blogs
 - [x] Reduce amount of time gritter notification stay visible
-- [ ] DRY up admin actions in blogs and topics
 - [x] Improve documentation (especially `#no doc`)
+- [ ] Order sidebar topics by count of blogs
+- [ ] Add shared error alert partial
+- [ ] Improve consistency in style including navs and color schemes
+- [ ] DRY up admin actions in blogs and topics
 - [ ] DRY up nav bars
+- [ ] Add SEO keywords to blog model (maybe portfolio as well)
 
 ## Tutorial add ons
 

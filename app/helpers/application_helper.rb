@@ -42,6 +42,8 @@ module ApplicationHelper
 
   def alert_generator(message)
     js add_gritter message,
-                   title: "Christopher Brenner Portfolio", sticky: false
+                   title: "Christopher Brenner Portfolio",
+                   sticky: false,
+                   time: 2000
   end
 end

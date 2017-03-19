@@ -27,14 +27,14 @@ portfolios.
 - [x] Update blogs#toggle_status to its own controller
 - [ ] Add SEO keywords to blog model (maybe portfolio as well)
 - [ ] Add shared error alert partial
-- [ ] Update styles for better responsiveness
+- [x] Update styles for better responsiveness
 - [ ] Improve consistency in style including navs and color schemes
-- [ ] Fix tweets styles
-- [ ] Update brands so they return you to home
+- [x] Fix tweets styles
+- [x] Update brands so they return you to home
 - [ ] Add form for creating Topics
 - [ ] Update styles on Topics index
 - [ ] Order sidebar topics by count of blogs
-- [ ] Reduce amount of time gritter notification stay visible
+- [x] Reduce amount of time gritter notification stay visible
 - [ ] DRY up admin actions in blogs and topics
 - [x] Improve documentation (especially `#no doc`)
 - [ ] DRY up nav bars

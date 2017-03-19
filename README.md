@@ -23,7 +23,7 @@ portfolios.
 - [x] Remove scaffolded files that are unnecessary
 - [x] Add model validations
 - [ ] Remove API code in controllers where unneeded
-- [ ] Remove custom route for portfolios show
+- [x] Remove custom route for portfolios show
 - [ ] Update blogs#toggle_status to its own controller
 - [ ] Add SEO keywords to blog model (maybe portfolio as well)
 - [ ] Add shared error alert partial

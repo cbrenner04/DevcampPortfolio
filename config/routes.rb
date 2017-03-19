@@ -10,19 +10,17 @@ Rails.application.routes.draw do
                sign_up: "register"
              }
 
-  resources :whatevers
   resources :blogs do
     get :toggle_status, on: :member
   end
 
-  resources :portfolios, except: [:show] do
+  resources :portfolios do
     put :sort, on: :collection
   end
 
   get :about, to: "pages#about"
   get :contact, to: "pages#contact"
-  get "portfolio/:id", to: "portfolios#show", as: "portfolio_show"
-  get "tweets", to: "pages#tweets"
+  get :tweets, to: "pages#tweets"
 
   mount ActionCable.server => "/cable"
 

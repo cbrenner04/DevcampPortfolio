@@ -1,7 +1,5 @@
 # frozen_string_literal: true
 Rails.application.routes.draw do
-  resources :topics, only: [:index, :show]
-
   devise_for :users,
              path: "",
              path_names: {
@@ -10,19 +8,19 @@ Rails.application.routes.draw do
                sign_up: "register"
              }
 
+  resource :about, only: :show
   resources :blogs do
     get :toggle_status, on: :member
   end
-
+  resource :contact, only: :show
+  resource :home, only: :show
   resources :portfolios do
     put :sort, on: :collection
   end
-
-  get :about, to: "pages#about"
-  get :contact, to: "pages#contact"
-  get :tweets, to: "pages#tweets"
+  resources :topics, only: [:index, :show]
+  resources :tweets, only: :index
 
   mount ActionCable.server => "/cable"
 
-  root to: "pages#home"
+  root to: "homes#show"
 end

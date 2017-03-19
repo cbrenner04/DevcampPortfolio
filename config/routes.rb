@@ -17,7 +17,7 @@ Rails.application.routes.draw do
   resources :portfolios do
     put :sort, on: :collection
   end
-  resources :topics, only: [:index, :show]
+  resources :topics, only: [:index, :show, :new, :create]
   resources :tweets, only: :index
 
   mount ActionCable.server => "/cable"

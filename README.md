@@ -32,7 +32,7 @@ portfolios.
 - [x] Fix tweets styles
 - [x] Update brands so they return you to home
 - [ ] Add form for creating Topics
-- [ ] Update styles on Topics index
+- [x] Update styles on Topics index
 - [ ] Order sidebar topics by count of blogs
 - [x] Reduce amount of time gritter notification stay visible
 - [ ] DRY up admin actions in blogs and topics

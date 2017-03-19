@@ -1,4 +1,4 @@
 <%= link_to topic_path(topic), class: "list-group-item list-group-item-action topic-list" do %>
   <%= topic.title %>
-  <span class="badge badge-pill badge-info float-right"><%= topic.blogs.count %></span>
+  <span class="badge badge-pill badge-info float-right"><%= topic.blogs.published.count %></span>
 <% end %>

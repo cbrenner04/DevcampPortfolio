@@ -32,6 +32,7 @@ portfolios.
 - [x] Update styles on Topics index
 - [x] Reduce amount of time gritter notification stay visible
 - [x] Improve documentation (especially `#no doc`)
+- [x] Add admin controls of topics (edit, destroy)
 - [ ] Order sidebar topics by count of blogs
 - [ ] Add shared error alert partial
 - [ ] Improve consistency in style including navs and color schemes

@@ -4,6 +4,7 @@ class TopicsController < ApplicationController
   access all: [:show, :index],
          user: [:show, :index],
          admin: :all
+  before_action :set_topic, only: [:show, :edit, :update, :destroy]
   layout "blog"
 
   before_action :set_sidebar_topics
@@ -33,6 +34,21 @@ class TopicsController < ApplicationController
     end
   end
 
+  def edit; end
+
+  def update
+    if @topic.update(topic_params)
+      redirect_to topics_path, notice: "Topic successfully updated."
+    else
+      render :edit
+    end
+  end
+
+  def destroy
+    @topic.destroy
+    redirect_to topics_path, notice: "Topic destroyed."
+  end
+
   private
 
   def topic_params
@@ -41,5 +57,9 @@ class TopicsController < ApplicationController
 
   def set_sidebar_topics
     @sidebar_topics = Topic.with_blogs
+  end
+
+  def set_topic
+    @topic = Topic.find(params[:id])
   end
 end

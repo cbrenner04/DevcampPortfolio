@@ -6,7 +6,19 @@ RSpec.feature "Topics" do
   let(:topic) { create :topic }
   before do
     2.times do |i|
-      create :blog, title: "foo #{i}", slug: "foo #{i}", topic: topic
+      create :blog,
+             title: "foo #{i}",
+             slug: "foo #{i}",
+             topic: topic,
+             status: "published"
+    end
+
+    2.times do |i|
+      create :blog,
+             title: "bar #{i}",
+             slug: "bar #{i}",
+             topic: topic,
+             status: "draft"
     end
   end
 
@@ -18,7 +30,7 @@ RSpec.feature "Topics" do
       index_page.load
     end
 
-    scenario "views topics with count of related blogs" do
+    scenario "views topics with count of related, published blogs" do
       expect(index_page).to have_text "#{topic.title} 2"
     end
   end
@@ -31,7 +43,7 @@ RSpec.feature "Topics" do
       index_page.load
     end
 
-    scenario "views topics with count of related blogs" do
+    scenario "views topics with count of related, published blogs" do
       expect(index_page).to have_text "#{topic.title} 2"
     end
   end
@@ -39,7 +51,7 @@ RSpec.feature "Topics" do
   context "when no user is signed in" do
     before { index_page.load }
 
-    scenario "views topics with count of related blogs" do
+    scenario "views topics with count of related, published blogs" do
       expect(index_page).to have_text "#{topic.title} 2"
     end
   end

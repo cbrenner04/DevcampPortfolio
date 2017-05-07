@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+
 # model for blogs
 class Blog < ApplicationRecord
   extend FriendlyId

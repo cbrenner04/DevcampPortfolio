@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+
 # helpers for portfolio views
 module PortfoliosHelper
   def image_generator(height:, width:)

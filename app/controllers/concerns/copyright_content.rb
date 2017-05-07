@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+
 # Sets the copyright for displaying
 module CopyrightContent
   extend ActiveSupport::Concern

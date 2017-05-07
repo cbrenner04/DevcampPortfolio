@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+
 # Sets current user to current user or guest user
 module CurrentUserConcern
   def current_user

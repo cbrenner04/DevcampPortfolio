@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+
 # actions for comments in blog posts
 class CommentsController < ApplicationController
   def create

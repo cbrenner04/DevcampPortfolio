@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+
 source "https://rubygems.org"
 
 git_source(:github) do |repo_name|
@@ -24,7 +25,7 @@ end
 
 group :development do
   gem "listen", "~> 3.0.5"
-  gem "rubocop", "~> 0.47.1"
+  gem "rubocop", "~> 0.48.1"
   gem "spring"
   gem "spring-watcher-listen", "~> 2.0.0"
   gem "web-console", ">= 3.3.0"

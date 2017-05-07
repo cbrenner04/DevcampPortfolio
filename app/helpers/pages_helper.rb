@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+
 # helpers for pages views
 module PagesHelper
   # rubocop:disable MethodLength

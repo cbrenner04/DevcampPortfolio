@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+
 # model for topics relating to blogs
 class Topic < ApplicationRecord
   has_many :blogs

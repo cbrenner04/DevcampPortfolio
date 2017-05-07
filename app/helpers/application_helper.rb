@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+
 # helpers for application views
 module ApplicationHelper
   def login_helper(style = "")

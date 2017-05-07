@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+
 # helpers for blogs views
 module BlogsHelper
   def gravatar_helper(user)

@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+
 # functionality for setting the session source based on query in url
 module SetSessionSource
   extend ActiveSupport::Concern

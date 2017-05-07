@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+
 # model for comments which relate to blogs and users
 class Comment < ApplicationRecord
   MAXIMUM_LENGTH = 1000

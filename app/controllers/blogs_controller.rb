@@ -1,12 +1,13 @@
 # frozen_string_literal: true
+
 # actions for blogs
 class BlogsController < ApplicationController
-  access all: [:show, :index],
-         user: { except: [:destroy, :new, :create, :update, :edit] },
+  access all: %i[show index],
+         user: { except: %i[destroy new create update edit] },
          admin: :all
   before_action :set_blog,
-                only: [:show, :edit, :update, :destroy, :toggle_status]
-  before_action :set_sidebar_topics, only: [:index, :new, :edit, :show]
+                only: %i[show edit update destroy toggle_status]
+  before_action :set_sidebar_topics, only: %i[index new edit show]
   layout "blog"
 
   def index

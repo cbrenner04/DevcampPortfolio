@@ -1,10 +1,11 @@
 # frozen_string_literal: true
+
 # portfolio actions
 class PortfoliosController < ApplicationController
-  access all: [:show, :index],
-         user: { except: [:destroy, :new, :create, :update, :edit, :sort] },
+  access all: %i[show index],
+         user: { except: %i[destroy new create update edit sort] },
          admin: :all
-  before_action :set_portfolio, only: [:show, :edit, :update, :destroy]
+  before_action :set_portfolio, only: %i[show edit update destroy]
   layout "portfolio"
 
   def index
@@ -57,7 +58,7 @@ class PortfoliosController < ApplicationController
     params
       .require(:portfolio)
       .permit(:title, :subtitle, :body, :main_image, :thumb_image,
-              technologies_attributes: [:id, :name, :_destroy])
+              technologies_attributes: %i[id name _destroy])
   end
 
   def set_portfolio

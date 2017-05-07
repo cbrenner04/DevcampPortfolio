@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+
 # channel for comments on blogs
 class BlogsChannel < ApplicationCable::Channel
   def subscribed

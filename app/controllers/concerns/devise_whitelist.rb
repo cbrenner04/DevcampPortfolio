@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+
 # whitelist custom params for devise
 module DeviseWhitelist
   extend ActiveSupport::Concern

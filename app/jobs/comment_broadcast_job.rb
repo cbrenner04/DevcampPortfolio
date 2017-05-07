@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+
 # broadcast job for comments in blogs
 class CommentBroadcastJob < ApplicationJob
   queue_as :default

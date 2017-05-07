@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+
 module Pages
   class Home < SitePrism::Page
     set_url "/"

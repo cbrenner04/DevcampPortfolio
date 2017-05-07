@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+
 module ApplicationCable
   # user connection set for action cable
   class Connection < ActionCable::Connection::Base

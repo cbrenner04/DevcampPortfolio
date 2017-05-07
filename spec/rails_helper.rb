@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+
 require "simplecov"
 
 SimpleCov.minimum_coverage 99
@@ -31,7 +32,7 @@ RSpec.configure do |config|
   config.infer_spec_type_from_file_location!
   config.filter_rails_from_backtrace!
 
-  [:controller, :view, :request].each do |type|
+  %i[controller view request].each do |type|
     config.include Devise::Test::IntegrationHelpers, type: :feature
     config.include ::Rails::Controller::Testing::TestProcess, type: type
     config.include ::Rails::Controller::Testing::TemplateAssertions, type: type

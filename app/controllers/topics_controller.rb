@@ -1,10 +1,11 @@
 # frozen_string_literal: true
+
 # actions for Topics which are related to blogs
 class TopicsController < ApplicationController
-  access all: [:show, :index],
-         user: [:show, :index],
+  access all: %i[show index],
+         user: %i[show index],
          admin: :all
-  before_action :set_topic, only: [:show, :edit, :update, :destroy]
+  before_action :set_topic, only: %i[show edit update destroy]
   layout "blog"
 
   before_action :set_sidebar_topics

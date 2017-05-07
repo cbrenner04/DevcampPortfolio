@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+
 # actions for tweets page
 class TweetsController < ApplicationController
   def index

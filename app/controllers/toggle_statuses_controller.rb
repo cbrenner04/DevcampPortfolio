@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+
 # action for toggling status of blog
 class ToggleStatusesController < ApplicationController
   access all: { except: [:show] },

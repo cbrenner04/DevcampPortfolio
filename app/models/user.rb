@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+
 # model for users
 class User < ApplicationRecord
   petergate(roles: [:admin], multiple: false)

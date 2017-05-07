@@ -3,10 +3,8 @@ require "rails_helper"
 
 RSpec.describe ContactsController, type: :controller do
   describe "GET #show" do
-    it "has status 200" do
-      get :show
+    before { get :show }
 
-      expect(response.status).to be 200
-    end
+    it { expect(response).to be_success }
   end
 end

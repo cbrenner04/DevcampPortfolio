@@ -13,17 +13,15 @@ RSpec.feature "Blogs index" do
       index_page.load
     end
 
+    scenario { expect(index_page).to have_status_icon }
+    scenario { expect(index_page).to have_edit_icon }
+    scenario { expect(index_page).to have_delete_icon }
+
     scenario "navigates to new form" do
       index_page.new_link.click
 
       expect(current_path).to eq new_blog_path
     end
-
-    scenario { expect(index_page).to have_status_icon }
-
-    scenario { expect(index_page).to have_edit_icon }
-
-    scenario { expect(index_page).to have_delete_icon }
 
     scenario "navigates to show" do
       click_on blog.title
@@ -54,11 +52,8 @@ RSpec.feature "Blogs index" do
     end
 
     scenario { expect(index_page).to_not have_new_link }
-
     scenario { expect(index_page).to_not have_status_icon }
-
     scenario { expect(index_page).to_not have_edit_icon }
-
     scenario { expect(index_page).to_not have_delete_icon }
 
     scenario "navigates to show" do
@@ -87,11 +82,8 @@ RSpec.feature "Blogs index" do
     end
 
     scenario { expect(index_page).to_not have_new_link }
-
     scenario { expect(index_page).to_not have_status_icon }
-
     scenario { expect(index_page).to_not have_edit_icon }
-
     scenario { expect(index_page).to_not have_delete_icon }
 
     scenario "navigates to show" do

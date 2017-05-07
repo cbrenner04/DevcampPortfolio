@@ -6,10 +6,9 @@ RSpec.describe AboutsController, type: :controller do
   let(:least_skilled) { create :skill, percent_utilized: 2 }
 
   describe "GET #show" do
-    it "assigns @skills as all Skills in descending order" do
-      get :show
+    before { get :show }
 
-      expect(assigns(:skills)).to eq [most_skilled, least_skilled]
-    end
+    it { expect(response).to be_success }
+    it { expect(assigns(:skills)).to eq [most_skilled, least_skilled] }
   end
 end

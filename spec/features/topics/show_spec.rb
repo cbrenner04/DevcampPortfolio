@@ -67,7 +67,7 @@ RSpec.feature "Show topic" do
     end
 
     scenario "cannot destroy topic" do
-      expect(show_page).to_not have_edit_link
+      expect(show_page).to_not have_destroy_link
     end
   end
 
@@ -84,7 +84,7 @@ RSpec.feature "Show topic" do
     end
 
     scenario "cannot destroy topic" do
-      expect(show_page).to_not have_edit_link
+      expect(show_page).to_not have_destroy_link
     end
   end
 end

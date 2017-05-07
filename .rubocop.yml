@@ -11,5 +11,8 @@ BlockLength:
   Exclude:
     - spec/**/*
 
+OutputSafety:
+  Enabled: false
+
 StringLiterals:
   EnforcedStyle: double_quotes

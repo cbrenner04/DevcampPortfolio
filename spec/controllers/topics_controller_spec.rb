@@ -4,86 +4,101 @@ require "rails_helper"
 RSpec.describe TopicsController, type: :controller do
   let(:user) { create :user }
   let(:topic) { create :topic }
-  let(:invalid_params) { { title: nil } }
+  let(:valid_params) { { topic: { title: "foo" } } }
+  let(:invalid_params) { { topic: { title: nil } } }
+  let(:valid_session) { {} }
 
   before { sign_in user }
 
   describe "GET #index" do
-    it "returns http success" do
-      get :index
+    before { get :index, session: valid_session }
 
-      expect(response).to have_http_status(:success)
-    end
+    it { expect(response).to be_success }
+    it { expect(assigns(:topics)).to include topic }
   end
 
   describe "GET #show" do
-    it "assigns the requested topic as @topic" do
-      get :show, params: { id: topic.to_param }
+    before { get :show, params: { id: topic.to_param }, session: valid_session }
 
-      expect(assigns(:topic)).to eq(topic)
-    end
+    it { expect(response).to be_success }
+    it { expect(assigns(:topic)).to eq(topic) }
   end
 
   describe "GET #new" do
-    it "assigns a new topic as @topic" do
-      get :new
+    before { get :new, session: valid_session }
 
-      expect(assigns(:topic)).to be_a_new Topic
-    end
+    it { expect(response).to be_success }
+    it { expect(assigns(:topic)).to be_a_new Topic }
   end
 
   describe "GET #edit" do
-    it "assigns requested topic as @topic" do
-      get :edit, params: { id: topic.to_param }
+    before { get :edit, params: { id: topic.to_param }, session: valid_session }
 
-      expect(assigns(:topic)).to eq topic
-    end
+    it { expect(response).to be_success }
+    it { expect(assigns(:topic)).to eq topic }
   end
 
   describe "POST #create" do
     context "with valid params" do
-      let(:valid_params) { { title: "foo" } }
-
       it "creates a new topic" do
         expect do
-          post :create, params: { topic: valid_params }
+          post :create, params: valid_params, session: valid_session
         end.to change(Topic, :count).by(1)
+      end
+
+      it "assigns a newly created topic as @topic" do
+        post :create, params: valid_params, session: valid_session
+        expect(assigns(:topic)).to be_a(Topic)
+
+        expect(assigns(:topic)).to be_persisted
+      end
+
+      it "redirects to the index" do
+        post :create, params: valid_params, session: valid_session
+
+        expect(response).to redirect_to topics_path
       end
     end
 
     context "with invalid params" do
-      it "re-renders the new page" do
-        post :create, params: { topic: invalid_params }
+      before { post :create, params: invalid_params }
 
-        expect(response).to render_template :new
-      end
+      it { expect(assigns(:topic)).to be_a_new(Topic) }
+      it { expect(response).to render_template :new }
     end
   end
 
   describe "POST #update" do
     context "with valid params" do
       let(:update_params) { { title: "update foo" } }
+      let(:valid_params) { { id: topic.to_param, topic: update_params } }
+
+      before { put :update, params: valid_params, session: valid_session }
 
       it "updates a topic" do
-        post :update, params: { id: topic.to_param, topic: update_params }
         topic.reload
 
         expect(topic.title).to eq "update foo"
       end
+
+      it { expect(assigns(:topic)).to eq(topic) }
+      it { expect(response).to redirect_to topics_path }
     end
 
     context "with invalid params" do
-      it "re-renders the edit page" do
-        post :update, params: { id: topic.to_param, topic: invalid_params }
+      let(:invalid_params) { { id: topic.to_param, topic: { title: nil } } }
 
-        expect(response).to render_template :edit
-      end
+      before { put :update, params: invalid_params, session: valid_session }
+
+      it { expect(assigns(:topic)).to eq(topic) }
+      it { expect(response).to render_template :edit }
     end
   end
 
   describe "DELETE #destroy" do
+    let!(:topic) { create :topic }
+
     it "destroys the requested topic" do
-      topic = create :topic
       expect do
         delete :destroy, params: { id: topic.to_param }
       end.to change(Topic, :count).by(-1)

@@ -2,162 +2,134 @@
 require "rails_helper"
 
 RSpec.describe PortfoliosController, type: :controller do
-  let(:valid_attributes) do
+  let(:valid_params) do
     {
-      title: "Foo",
-      subtitle: "Bar",
-      body: "Baz",
-      main_image: "f@e.com",
-      thumb_image: "f@e.com"
+      portfolio: {
+        title: "Foo",
+        subtitle: "Bar",
+        body: "Baz",
+        main_image: "f@e.com",
+        thumb_image: "f@e.com"
+      }
     }
   end
 
-  let(:invalid_attributes) { { title: nil } }
+  let(:invalid_params) { { portfolio: { title: nil } } }
   let(:valid_session) { {} }
-
   let(:user) { create :user }
+  let(:portfolio_item) { create :portfolio }
 
   before { sign_in user }
 
   describe "GET #index" do
-    it "assigns all portfolio_items as @portfolio_items" do
-      portfolio_item = create :portfolio
-      get :index, params: {}, session: valid_session
+    before { get :index, session: valid_session }
 
-      expect(assigns(:portfolio_items)).to eq([portfolio_item])
-    end
+    it { expect(response).to be_success }
+    it { expect(assigns(:portfolio_items)).to eq([portfolio_item]) }
   end
 
   describe "GET #show" do
-    it "assigns the requested portfolio_item as @portfolio_item" do
-      portfolio_item = create :portfolio
+    before do
       get :show, params: { id: portfolio_item.to_param }, session: valid_session
-
-      expect(assigns(:portfolio_item)).to eq(portfolio_item)
     end
+
+    it { expect(response).to be_success }
+    it { expect(assigns(:portfolio_item)).to eq(portfolio_item) }
   end
 
   describe "GET #new" do
-    it "assigns a new portfolio_item as @portfolio_item" do
-      get :new, params: {}, session: valid_session
+    before { get :new, session: valid_session }
 
-      expect(assigns(:portfolio_item)).to be_a_new(Portfolio)
-    end
+    it { expect(response).to be_success }
+    it { expect(assigns(:portfolio_item)).to be_a_new(Portfolio) }
   end
 
   describe "GET #edit" do
-    it "assigns the requested portfolio as @portfolio" do
-      portfolio_item = create :portfolio
+    before do
       get :edit, params: { id: portfolio_item.to_param }, session: valid_session
-
-      expect(assigns(:portfolio_item)).to eq(portfolio_item)
     end
+
+    it { expect(response).to be_success }
+    it { expect(assigns(:portfolio_item)).to eq(portfolio_item) }
   end
 
   describe "POST #create" do
     context "with valid params" do
       it "creates a new portfolio" do
         expect do
-          post :create, params: {
-            portfolio: valid_attributes
-          }, session: valid_session
+          post :create, params: valid_params, session: valid_session
         end.to change(Portfolio, :count).by(1)
       end
 
       it "assigns a newly created portfolio as @portfolio" do
-        post :create, params: {
-          portfolio: valid_attributes
-        }, session: valid_session
-        expect(assigns(:portfolio_item)).to be_a(Portfolio)
+        post :create, params: valid_params, session: valid_session
 
+        expect(assigns(:portfolio_item)).to be_a(Portfolio)
         expect(assigns(:portfolio_item)).to be_persisted
       end
 
       it "redirects to the created portfolio" do
-        post :create, params: {
-          portfolio: valid_attributes
-        }, session: valid_session
+        post :create, params: valid_params, session: valid_session
 
         expect(response).to redirect_to portfolios_path
       end
     end
 
     context "with invalid params" do
-      it "assigns a newly created but unsaved portfolio as @portfolio" do
-        post :create, params: {
-          portfolio: invalid_attributes
-        }, session: valid_session
+      before { post :create, params: invalid_params, session: valid_session }
 
-        expect(assigns(:portfolio_item)).to be_a_new(Portfolio)
-      end
-
-      it "re-renders the 'new' template" do
-        post :create, params: {
-          portfolio: invalid_attributes
-        }, session: valid_session
-
-        expect(response).to render_template("new")
-      end
+      it { expect(assigns(:portfolio_item)).to be_a_new(Portfolio) }
+      it { expect(response).to render_template("new") }
     end
   end
 
   describe "PUT #update" do
     context "with valid params" do
       let(:new_attributes) { { title: "Baz" } }
+      let(:valid_params) do
+        { id: portfolio_item.to_param, portfolio: new_attributes }
+      end
+
+      before { put :update, params: valid_params, session: valid_session }
 
       it "updates the requested portfolio" do
-        portfolio = create :portfolio
-        put :update, params: {
-          id: portfolio.to_param, portfolio: new_attributes
-        }, session: valid_session
-        portfolio.reload
+        portfolio_item.reload
 
-        expect(portfolio.title).to eq "Baz"
+        expect(portfolio_item.title).to eq "Baz"
       end
 
-      it "assigns the requested portfolio as @portfolio" do
-        portfolio_item = create :portfolio
-        put :update, params: {
-          id: portfolio_item.to_param, portfolio: valid_attributes
-        }, session: valid_session
-
-        expect(assigns(:portfolio_item)).to eq(portfolio_item)
-      end
-
-      it "redirects to the portfolio" do
-        portfolio = create :portfolio
-        put :update, params: {
-          id: portfolio.to_param, portfolio: valid_attributes
-        }, session: valid_session
-
-        expect(response).to redirect_to(portfolios_path)
-      end
+      it { expect(assigns(:portfolio_item)).to eq(portfolio_item) }
+      it { expect(response).to redirect_to(portfolios_path) }
     end
 
     context "with invalid params" do
-      it "assigns the portfolio as @portfolio" do
-        portfolio_item = create :portfolio
-        put :update, params: {
-          id: portfolio_item.to_param, portfolio: invalid_attributes
-        }, session: valid_session
-
-        expect(assigns(:portfolio_item)).to eq(portfolio_item)
+      let(:invalid_params) do
+        { id: portfolio_item.to_param, portfolio: { title: nil } }
       end
 
-      it "re-renders the 'edit' template" do
-        portfolio = create :portfolio
-        put :update, params: {
-          id: portfolio.to_param, portfolio: invalid_attributes
-        }, session: valid_session
+      before { put :update, params: invalid_params, session: valid_session }
 
-        expect(response).to render_template("edit")
-      end
+      it { expect(assigns(:portfolio_item)).to eq(portfolio_item) }
+      it { expect(response).to render_template("edit") }
     end
   end
 
+  describe "PUT #sort" do
+    before do
+      put :sort, params: {
+        order: {
+          foo: { id: portfolio_item.id, position: 2 }
+        }
+      }, session: valid_session
+    end
+
+    it { expect(response).to be_success }
+  end
+
   describe "DELETE #destroy" do
+    let!(:portfolio) { create :portfolio }
+
     it "destroys the requested portfolio" do
-      portfolio = create :portfolio
       expect do
         delete :destroy, params: {
           id: portfolio.to_param
@@ -166,7 +138,6 @@ RSpec.describe PortfoliosController, type: :controller do
     end
 
     it "redirects to the portfolios list" do
-      portfolio = create :portfolio
       delete :destroy, params: {
         id: portfolio.to_param
       }, session: valid_session

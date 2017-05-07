@@ -11,7 +11,7 @@ class Blog < ApplicationRecord
 
   friendly_id :title, use: :slugged
 
-  validates :title, :body, :topic_id, presence: true
+  validates :title, :body, :topic, presence: true
 
   def self.descending
     order(created_at: :desc)

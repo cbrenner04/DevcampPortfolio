@@ -6,7 +6,6 @@ class ToggleStatusesController < ApplicationController
          admin: [:show]
   layout "blog"
 
-  # TODO: needs test
   def show
     @blog = Blog.friendly.find(params[:blog_id])
     @blog.draft? ? @blog.published! : @blog.draft!

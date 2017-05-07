@@ -2,17 +2,23 @@
 require "rails_helper"
 
 RSpec.describe Comment, type: :model do
-  before { @comment = create :comment }
-
-  describe "creation" do
-    it { expect(@comment).to be_valid }
-  end
+  let(:comment) { create :comment }
 
   describe "validations" do
-    it "is invalid when no content" do
-      @comment.content = nil
+    it { expect(comment).to be_valid }
 
-      expect(@comment).to_not be_valid
+    describe "with no content" do
+      before { comment.content = nil }
+
+      it { expect(comment).to be_invalid }
+    end
+
+    describe "with content greater than maximum" do
+      before do
+        comment.content = SecureRandom.hex((Comment::MAXIMUM_LENGTH + 2) / 2)
+      end
+
+      it { expect(comment).to be_invalid }
     end
   end
 end

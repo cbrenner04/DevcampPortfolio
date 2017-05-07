@@ -2,23 +2,34 @@
 require "rails_helper"
 
 RSpec.describe Blog, type: :model do
-  before { @blog = create :blog }
-
-  describe "creation" do
-    it { expect(@blog).to be_valid }
-  end
+  let(:blog) { create :blog }
 
   describe "validations" do
-    it "is invalid when no title" do
-      @blog.title = nil
+    it { expect(blog).to be_valid }
 
-      expect(@blog).to_not be_valid
+    describe "with no title" do
+      before { blog.title = nil }
+
+      it { expect(blog).to be_invalid }
     end
 
-    it "is invalid when no body" do
-      @blog.body = nil
+    describe "with no body" do
+      before { blog.body = nil }
 
-      expect(@blog).to_not be_valid
+      it { expect(blog).to be_invalid }
     end
+
+    describe "with no topic" do
+      before { blog.topic = nil }
+
+      it { expect(blog).to be_invalid }
+    end
+  end
+
+  describe ".descending" do
+    let!(:blog1) { create :blog, slug: "foo" }
+    let!(:blog2) { create :blog, slug: "bar" }
+
+    it { expect(Blog.descending).to eq [blog2, blog1] }
   end
 end

@@ -15,7 +15,7 @@ class PortfoliosController < ApplicationController
     params[:order].each do |_key, value|
       Portfolio.find(value[:id]).update(position: value[:position])
     end
-    render nothing: true
+    head :ok
   end
 
   def show; end

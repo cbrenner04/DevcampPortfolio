@@ -2,9 +2,7 @@
 # actions for blogs
 class BlogsController < ApplicationController
   access all: [:show, :index],
-         user: {
-           except: [:destroy, :new, :create, :update, :edit]
-         },
+         user: { except: [:destroy, :new, :create, :update, :edit] },
          admin: :all
   before_action :set_blog,
                 only: [:show, :edit, :update, :destroy, :toggle_status]

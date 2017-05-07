@@ -5,10 +5,9 @@ RSpec.describe HomesController, type: :controller do
   let(:blog) { create :blog }
 
   describe "GET #show" do
-    it "assigns @posts as all Blogs" do
-      get :show
+    before { get :show }
 
-      expect(assigns(:posts)).to include blog
-    end
+    it { expect(response).to be_success }
+    it { expect(assigns(:posts)).to include blog }
   end
 end

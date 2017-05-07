@@ -2,23 +2,28 @@
 require "rails_helper"
 
 RSpec.describe Portfolio, type: :model do
-  before { @portfolio = create :portfolio }
-
-  describe "creation" do
-    it { expect(@portfolio).to be_valid }
-  end
+  let(:portfolio) { create :portfolio }
 
   describe "validations" do
-    it "is invalid when no title" do
-      @portfolio.title = nil
+    it { expect(portfolio).to be_valid }
 
-      expect(@portfolio).to_not be_valid
+    describe "with no title" do
+      before { portfolio.title = nil }
+
+      it { expect(portfolio).to be_invalid }
     end
 
-    it "is invalid when no body" do
-      @portfolio.body = nil
+    describe "with no body" do
+      before { portfolio.body = nil }
 
-      expect(@portfolio).to_not be_valid
+      it { expect(portfolio).to be_invalid }
     end
+  end
+
+  describe ".by_position" do
+    let!(:portfolio1) { create :portfolio, position: 1 }
+    let!(:portfolio2) { create :portfolio, position: 2 }
+
+    it { expect(Portfolio.by_position).to eq [portfolio1, portfolio2] }
   end
 end

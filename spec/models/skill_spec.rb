@@ -2,34 +2,28 @@
 require "rails_helper"
 
 RSpec.describe Skill, type: :model do
-  before { @skill = create :skill }
-
-  describe "creation" do
-    it { expect(@skill).to be_valid }
-  end
+  let(:skill) { create :skill }
 
   describe "validations" do
-    it "is invalid when no title" do
-      @skill.title = nil
+    it { expect(skill).to be_valid }
 
-      expect(@skill).to_not be_valid
+    describe "with no title" do
+      before { skill.title = nil }
+
+      it { expect(skill).to be_invalid }
     end
 
-    it "is invalid when no percent_utilized" do
-      @skill.percent_utilized = nil
+    describe "with no percent_utilized" do
+      before { skill.percent_utilized = nil }
 
-      expect(@skill).to_not be_valid
+      it { expect(skill).to be_invalid }
     end
   end
 
   describe ".descending" do
-    before { Skill.destroy_all }
+    let!(:most_skill) { create :skill, percent_utilized: 50 }
+    let!(:least_skill) { create :skill, percent_utilized: 20 }
 
-    it "returns records in descending order" do
-      most_skill = create :skill, percent_utilized: 50
-      least_skill = create :skill, percent_utilized: 20
-
-      expect(Skill.descending).to eq [most_skill, least_skill]
-    end
+    it { expect(Skill.descending).to eq [most_skill, least_skill] }
   end
 end

@@ -8,14 +8,11 @@ RSpec.describe ToggleStatusesController, type: :controller do
   before { sign_in user }
 
   describe "GET #show" do
-    it "assigns @blog as a blog" do
-      get :show, params: { blog_id: blog.slug }
+    before { get :show, params: { blog_id: blog.slug } }
 
-      expect(assigns(:blog)).to eq blog
-    end
+    it { expect(assigns(:blog)).to eq blog }
 
     it "updates the status of the blog" do
-      get :show, params: { blog_id: blog.slug }
       blog.reload
 
       expect(blog.status).to eq "draft"

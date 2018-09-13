@@ -8,7 +8,7 @@ module Pages
       element :body, "p"
       element :comment_input, "textarea[name='comment[content]']"
       element :submit, "input[type='submit']"
-      element :comment, ".comment-card.card.card-block"
+      element :comment, ".comment-card.card.card-body"
     end
   end
 end

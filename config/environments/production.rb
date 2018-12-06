@@ -98,4 +98,8 @@ Rails.application.configure do
     "http://christopherbrenner.herokuapp.com"
   ]
   config.action_cable.url = "wss://christopherbrenner.herokuapp.com/cable"
+
+  config.action_mailer.default_url_options = {
+    host: "https://www.christopherbrenner.com"
+  }
 end

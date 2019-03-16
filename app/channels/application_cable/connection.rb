@@ -26,6 +26,7 @@ module ApplicationCable
     def find_verified_user
       verified_user = env["warden"].user
       return unless verified_user
+
       verified_user
     end
   end

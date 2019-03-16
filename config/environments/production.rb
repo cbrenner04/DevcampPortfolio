@@ -1,5 +1,6 @@
 # frozen_string_literal: true
 
+# rubocop:disable Metrics/BlockLength
 Rails.application.configure do
   # Settings specified here will take precedence over those in
   # config/application.rb.
@@ -103,3 +104,4 @@ Rails.application.configure do
     host: "https://www.christopherbrenner.com"
   }
 end
+# rubocop:enable Metrics/BlockLength

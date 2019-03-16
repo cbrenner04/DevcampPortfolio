@@ -101,12 +101,6 @@ ActiveRecord::Schema.define(version: 20170315050106) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
   end
 
-  create_table "whatevers", force: :cascade do |t|
-    t.string   "whatever"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   add_foreign_key "blogs", "topics"
   add_foreign_key "comments", "blogs"
   add_foreign_key "comments", "users"

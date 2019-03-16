@@ -5,8 +5,10 @@ class BlogsController < ApplicationController
   access all: %i[show index],
          user: { except: %i[destroy new create update edit] },
          admin: :all
+  # rubocop:disable Rails/LexicallyScopedActionFilter
   before_action :set_blog,
                 only: %i[show edit update destroy toggle_status]
+  # rubocop:enable Rails/LexicallyScopedActionFilter
   before_action :set_sidebar_topics, only: %i[index new edit show]
   layout "blog"
 

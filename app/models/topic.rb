@@ -2,7 +2,7 @@
 
 # model for topics relating to blogs
 class Topic < ApplicationRecord
-  has_many :blogs
+  has_many :blogs, dependent: :destroy
   validates :title, presence: true
 
   def self.with_blogs

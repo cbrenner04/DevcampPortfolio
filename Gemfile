@@ -12,7 +12,7 @@ gem "jbuilder", "~> 2.5"
 gem "jquery-rails"
 gem "pg", "~> 0.18"
 gem "puma", "~> 3.0"
-gem "rails", "~> 5.0.2"
+gem "rails", "~> 5.0.2", ">= 5.0.7.2"
 gem "sass-rails", "~> 5.0"
 gem "turbolinks", "~> 5"
 gem "uglifier", ">= 1.3.0"
@@ -25,7 +25,7 @@ end
 
 group :development do
   gem "listen", "~> 3.0.5"
-  gem "rubocop", "~> 0.48.1"
+  gem "rubocop", "~> 0.65.0"
   gem "spring"
   gem "spring-watcher-listen", "~> 2.0.0"
   gem "web-console", ">= 3.3.0"
@@ -45,7 +45,7 @@ gem "site_prism", "~> 2.9"
 # authentication
 gem "devise", "~> 4.2"
 # style
-gem "bootstrap", "~> 4.1.2"
+gem "bootstrap", "~> 4.3", ">= 4.3.1"
 source "https://rails-assets.org" do
   gem "rails-assets-tether", ">= 1.3.3"
 end

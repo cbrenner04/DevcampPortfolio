@@ -43,7 +43,7 @@ gem "friendly_id", "~> 5.2"
 # page object model for features
 gem "site_prism", "~> 2.9"
 # authentication
-gem "devise", "~> 4.6", ">= 4.6.1"
+gem "devise", "~> 4.7", ">= 4.7.1"
 # style
 gem "bootstrap", "~> 4.3", ">= 4.3.1"
 source "https://rails-assets.org" do

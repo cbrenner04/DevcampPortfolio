@@ -24,5 +24,8 @@
 # No simple cov
 coverage
 
+# Ignore spec stats
+spec/examples.txt
+
 .env
 public/uploads

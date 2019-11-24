@@ -20,7 +20,7 @@ gem "uglifier", ">= 1.3.0"
 group :development, :test do
   gem "byebug", platform: :mri
   gem "factory_girl_rails", "~> 4.9", ">= 4.9.0"
-  gem "rspec-rails", "~> 3.8", ">= 3.8.2"
+  gem "rspec-rails", "~> 3.9", ">= 3.9.0"
 end
 
 group :development do
@@ -32,7 +32,7 @@ group :development do
 end
 
 group :test do
-  gem "capybara", "~> 2.12", ">= 2.12.1"
+  gem "capybara", "~> 2.18", ">= 2.18.0"
   gem "rails-controller-testing", "~> 1.0", ">= 1.0.4"
   gem "simplecov", "~> 0.13.0"
 end
@@ -41,7 +41,7 @@ end
 # slugs for blogs
 gem "friendly_id", "~> 5.2"
 # page object model for features
-gem "site_prism", "~> 2.9"
+gem "site_prism", "~> 2.17", ">= 2.17.1"
 # authentication
 gem "devise", "~> 4.7", ">= 4.7.1"
 # style
@@ -76,7 +76,7 @@ gem "coderay", "~> 1.1", ">= 1.1.1"
 # to launch `save_and_open_page`
 gem "launchy", "~> 2.4", ">= 2.4.3"
 # for headless browser test
-gem "poltergeist", "~> 1.14", ">= 1.14.0"
+gem "poltergeist", "~> 1.18", ">= 1.18.1"
 
 # declare ruby version for heroku
 ruby "2.4.0"

@@ -8,11 +8,11 @@ git_source(:github) do |repo_name|
 end
 
 gem "coffee-rails", "~> 4.2", ">= 4.2.2"
-gem "jbuilder", "~> 2.5"
+gem "jbuilder", "~> 2.6", ">= 2.6.4"
 gem "jquery-rails", ">= 4.3.5"
 gem "pg", "~> 0.18"
 gem "puma", "~> 3.12"
-gem "rails", "~> 5.0.7", ">= 5.0.7.2"
+gem "rails", "~> 5.2.4", ">= 5.2.4.3"
 gem "sass-rails", "~> 5.0", ">= 5.0.7"
 gem "turbolinks", "~> 5"
 gem "uglifier", ">= 1.3.0"
@@ -26,8 +26,8 @@ end
 group :development do
   gem "listen", "~> 3.0.5"
   gem "rubocop", "~> 0.65.0"
-  gem "spring"
-  gem "spring-watcher-listen", "~> 2.0.0"
+  gem "spring", ">= 2.0.1"
+  gem "spring-watcher-listen", "~> 2.0.1"
   gem "web-console", ">= 3.7.0"
 end
 
@@ -39,26 +39,26 @@ end
 
 # addons
 # slugs for blogs
-gem "friendly_id", "~> 5.2"
+gem "friendly_id", "~> 5.2", ">= 5.2.0"
 # page object model for features
 gem "site_prism", "~> 2.17", ">= 2.17.1"
 # authentication
 gem "devise", "~> 4.7", ">= 4.7.1"
 # style
-gem "bootstrap", "~> 4.3", ">= 4.3.1"
+gem "bootstrap", "~> 4.4", ">= 4.4.1"
 source "https://rails-assets.org" do
   gem "rails-assets-tether", ">= 1.3.3"
 end
 gem "font-awesome-rails", "~> 4.7", ">= 4.7.0.5"
 # authorization
-gem "petergate", "~> 1.7"
+gem "petergate", "~> 1.7", ">= 1.7.0"
 # pagination
-gem "kaminari", "~> 1.1", ">= 1.1.1"
+gem "kaminari", "~> 1.2", ">= 1.2.0"
 # jquery ui
 gem "jquery-ui-rails", "~> 6.0", ">= 6.0.1"
 # uploading files / videos / images
-gem "carrierwave", "~> 1.0"
-gem "carrierwave-aws", "~> 1.1"
+gem "carrierwave", "~> 1.0", ">= 1.0.0"
+gem "carrierwave-aws", "~> 1.1", ">= 1.1.0"
 gem "dotenv-rails", "~> 2.7", ">= 2.7.5"
 gem "mini_magick", "~> 4.9", ">= 4.9.4"
 # javascript elements in form

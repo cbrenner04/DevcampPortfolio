@@ -9,7 +9,7 @@ end
 
 gem "coffee-rails", "~> 4.2", ">= 4.2.2"
 gem "jbuilder", "~> 2.5"
-gem "jquery-rails", ">= 4.3.5"
+gem "jquery-rails", ">= 4.4.0"
 gem "pg", "~> 0.18"
 gem "puma", "~> 3.12"
 gem "rails", "~> 5.0.7", ">= 5.0.7.2"
@@ -45,7 +45,7 @@ gem "site_prism", "~> 2.17", ">= 2.17.1"
 # authentication
 gem "devise", "~> 4.7", ">= 4.7.1"
 # style
-gem "bootstrap", "~> 4.3", ">= 4.3.1"
+gem "bootstrap", "~> 4.4", ">= 4.4.1"
 source "https://rails-assets.org" do
   gem "rails-assets-tether", ">= 1.3.3"
 end

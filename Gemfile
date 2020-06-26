@@ -9,7 +9,7 @@ end
 
 gem "coffee-rails", "~> 4.2", ">= 4.2.2"
 gem "jbuilder", "~> 2.6", ">= 2.6.4"
-gem "jquery-rails", ">= 4.3.5"
+gem "jquery-rails", ">= 4.4.0"
 gem "pg", "~> 0.18"
 gem "puma", "~> 3.12", ">= 3.12.6"
 gem "rails", "~> 5.2.4", ">= 5.2.4.3"

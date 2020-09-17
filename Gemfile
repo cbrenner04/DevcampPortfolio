@@ -12,15 +12,15 @@ gem "jbuilder", "~> 2.6", ">= 2.6.4"
 gem "jquery-rails", ">= 4.4.0"
 gem "pg", "~> 0.18"
 gem "puma", "~> 3.12", ">= 3.12.6"
-gem "rails", "~> 5.2.4", ">= 5.2.4.3"
-gem "sass-rails", "~> 5.0", ">= 5.0.7"
+gem "rails", "~> 5.2.4", ">= 5.2.4.4"
+gem "sass-rails", "~> 5.1", ">= 5.1.0"
 gem "turbolinks", "~> 5"
 gem "uglifier", ">= 1.3.0"
 
 group :development, :test do
   gem "byebug", platform: :mri
   gem "factory_girl_rails", "~> 4.9", ">= 4.9.0"
-  gem "rspec-rails", "~> 3.9", ">= 3.9.0"
+  gem "rspec-rails", "~> 3.9", ">= 3.9.1"
 end
 
 group :development do
@@ -33,7 +33,7 @@ end
 
 group :test do
   gem "capybara", "~> 2.18", ">= 2.18.0"
-  gem "rails-controller-testing", "~> 1.0", ">= 1.0.4"
+  gem "rails-controller-testing", "~> 1.0", ">= 1.0.5"
   gem "simplecov", "~> 0.13.0"
 end
 
@@ -43,9 +43,9 @@ gem "friendly_id", "~> 5.2", ">= 5.2.0"
 # page object model for features
 gem "site_prism", "~> 2.17", ">= 2.17.1"
 # authentication
-gem "devise", "~> 4.7", ">= 4.7.1"
+gem "devise", "~> 4.7", ">= 4.7.2"
 # style
-gem "bootstrap", "~> 4.4", ">= 4.4.1"
+gem "bootstrap", "~> 4.5", ">= 4.5.0"
 source "https://rails-assets.org" do
   gem "rails-assets-tether", ">= 1.3.3"
 end

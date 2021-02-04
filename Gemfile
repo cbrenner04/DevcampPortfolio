@@ -70,7 +70,7 @@ gem "twitter", "~> 6.1"
 # redis
 gem "redis", "~> 3.3", ">= 3.3.3"
 # markdown parser
-gem "redcarpet", "~> 3.5"
+gem "redcarpet", "~> 3.5", ">= 3.5.1"
 # code syntax highlighting
 gem "coderay", "~> 1.1", ">= 1.1.1"
 # to launch `save_and_open_page`

@@ -12,7 +12,7 @@ gem "jbuilder", "~> 2.6", ">= 2.6.4"
 gem "jquery-rails", ">= 4.4.0"
 gem "pg", "~> 0.18"
 gem "puma", "~> 3.12", ">= 3.12.6"
-gem "rails", "~> 5.2.4", ">= 5.2.4.4"
+gem "rails", "~> 6.0.3", ">= 6.0.3.5"
 gem "sass-rails", "~> 5.1", ">= 5.1.0"
 gem "turbolinks", "~> 5"
 gem "uglifier", ">= 1.3.0"
@@ -39,19 +39,19 @@ end
 
 # addons
 # slugs for blogs
-gem "friendly_id", "~> 5.2", ">= 5.2.0"
+gem "friendly_id", "~> 5.3", ">= 5.3.0"
 # page object model for features
 gem "site_prism", "~> 2.17", ">= 2.17.1"
 # authentication
-gem "devise", "~> 4.7", ">= 4.7.2"
+gem "devise", "~> 4.7", ">= 4.7.3"
 # style
-gem "bootstrap", "~> 4.5", ">= 4.5.0"
+gem "bootstrap", "~> 4.5", ">= 4.5.3"
 source "https://rails-assets.org" do
   gem "rails-assets-tether", ">= 1.3.3"
 end
-gem "font-awesome-rails", "~> 4.7", ">= 4.7.0.5"
+gem "font-awesome-rails", "~> 4.7", ">= 4.7.0.6"
 # authorization
-gem "petergate", "~> 1.7", ">= 1.7.0"
+gem "petergate", "~> 1.9", ">= 1.9.1"
 # pagination
 gem "kaminari", "~> 1.2", ">= 1.2.1"
 # jquery ui
@@ -59,7 +59,7 @@ gem "jquery-ui-rails", "~> 6.0", ">= 6.0.1"
 # uploading files / videos / images
 gem "carrierwave", "~> 1.0", ">= 1.0.0"
 gem "carrierwave-aws", "~> 1.1", ">= 1.1.0"
-gem "dotenv-rails", "~> 2.7", ">= 2.7.5"
+gem "dotenv-rails", "~> 2.7", ">= 2.7.6"
 gem "mini_magick", "~> 4.9", ">= 4.9.4"
 # javascript elements in form
 gem "cocoon", "~> 1.2", ">= 1.2.9"

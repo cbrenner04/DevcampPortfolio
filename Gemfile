@@ -7,7 +7,7 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
-gem "coffee-rails", "~> 4.2", ">= 4.2.2"
+gem "coffee-rails", "~> 5.0"
 gem "jbuilder", "~> 2.6", ">= 2.6.4"
 gem "jquery-rails", ">= 4.4.0"
 gem "pg", "~> 0.18"
@@ -19,13 +19,15 @@ gem "uglifier", ">= 1.3.0"
 
 group :development, :test do
   gem "byebug", platform: :mri
-  gem "factory_girl_rails", "~> 4.9", ">= 4.9.0"
-  gem "rspec-rails", "~> 3.9", ">= 3.9.1"
+  gem "factory_bot_rails", "~> 4.9", ">= 4.9.0"
+  gem "rspec-rails", "~> 5.0"
+  gem "rubocop", "~> 1.11"
+  gem "rubocop-rails", "~> 2.9", ">= 2.9.1"
+  gem "rubocop-rspec", "~> 2.2"
 end
 
 group :development do
   gem "listen", "~> 3.0.5"
-  gem "rubocop", "~> 0.65.0"
   gem "spring", ">= 2.0.1"
   gem "spring-watcher-listen", "~> 2.0.1"
   gem "web-console", ">= 3.7.0"
@@ -79,4 +81,4 @@ gem "launchy", "~> 2.4", ">= 2.4.3"
 gem "poltergeist", "~> 1.18", ">= 1.18.1"
 
 # declare ruby version for heroku
-ruby "2.4.0"
+ruby "2.7.2"

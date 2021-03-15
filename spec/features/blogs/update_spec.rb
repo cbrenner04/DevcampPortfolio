@@ -2,7 +2,7 @@
 
 require "rails_helper"
 
-RSpec.feature "Edit Blog" do
+RSpec.describe "Edit Blog", type: :feature do
   let(:blog) { create :blog }
   let(:topic) { create :topic }
   let(:home_page) { Pages::Home.new }
@@ -18,7 +18,7 @@ RSpec.feature "Edit Blog" do
       edit_page.load(id: blog.id)
     end
 
-    scenario "updates blog successfully" do
+    it "updates blog successfully" do
       form_page.title.set "Updated Foo"
       form_page.topic.select topic.title
       form_page.publish.click
@@ -37,7 +37,7 @@ RSpec.feature "Edit Blog" do
       edit_page.load(id: blog.id)
     end
 
-    scenario "cannot access edit page" do
+    it "cannot access edit page" do
       expect(home_page.heading).to have_text "Welcome to my portfolio site"
     end
   end
@@ -45,7 +45,7 @@ RSpec.feature "Edit Blog" do
   context "when no one signed in" do
     before { edit_page.load(id: blog.id) }
 
-    scenario "cannot access edit page" do
+    it "cannot access edit page" do
       expect(home_page.heading).to have_text "Welcome to my portfolio site"
     end
   end

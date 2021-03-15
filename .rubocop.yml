@@ -1,18 +1,29 @@
+require:
+  - rubocop-rails
+  - rubocop-rspec
+
 AllCops:
   Exclude:
     - 'db/**/*'
-  TargetRubyVersion: 2.3
+  TargetRubyVersion: 2.7
   DisplayCopNames: true
+  NewCops: enable
 
-Rails:
-  Enabled: true
-
-BlockLength:
+Metrics/BlockLength:
   Exclude:
     - spec/**/*
 
-OutputSafety:
+Rails/OutputSafety:
   Enabled: false
 
-StringLiterals:
+Style/StringLiterals:
   EnforcedStyle: double_quotes
+
+RSpec/ExampleLength:
+  Enabled: false
+
+RSpec/MultipleExpectations:
+  Enabled: false
+
+RSpec/MultipleMemoizedHelpers:
+  Max: 7

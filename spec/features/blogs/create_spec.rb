@@ -2,7 +2,7 @@
 
 require "rails_helper"
 
-RSpec.feature "Create blog" do
+RSpec.describe "Create blog", type: :feature do
   let(:home_page) { Pages::Home.new }
   let(:new_page) { Pages::Blogs::New.new }
   let(:form_page) { Pages::Blogs::Form.new }
@@ -17,7 +17,7 @@ RSpec.feature "Create blog" do
       new_page.load
     end
 
-    scenario "creates blog successfully" do
+    it "creates blog successfully" do
       form_page.title.set "Foo"
       form_page.topic.select topic.title
       form_page.publish.click
@@ -36,7 +36,7 @@ RSpec.feature "Create blog" do
       new_page.load
     end
 
-    scenario "cannot access new page" do
+    it "cannot access new page" do
       expect(home_page.heading).to have_text "Welcome to my portfolio site"
     end
   end
@@ -44,7 +44,7 @@ RSpec.feature "Create blog" do
   context "when no one is logged in" do
     before { new_page.load }
 
-    scenario "cannot access new page" do
+    it "cannot access new page" do
       expect(home_page.heading).to have_text "Welcome to my portfolio site"
     end
   end

@@ -2,7 +2,7 @@
 
 require "rails_helper"
 
-RSpec.feature "Show portfolio" do
+RSpec.describe "Show portfolio", type: :feature do
   let(:show_page) { Pages::Portfolios::Show.new }
   let(:edit_page) { Pages::Portfolios::Edit.new }
   let(:portfolio) { create :portfolio }
@@ -15,9 +15,9 @@ RSpec.feature "Show portfolio" do
       show_page.load(id: portfolio.id)
     end
 
-    scenario { expect(show_page).to have_heading(text: portfolio.title) }
+    it { expect(show_page).to have_heading(text: portfolio.title) }
 
-    scenario "navigates to edit" do
+    it "navigates to edit" do
       show_page.link_to_edit.click
 
       expect(edit_page).to have_text "Edit #{portfolio.title}"
@@ -32,14 +32,14 @@ RSpec.feature "Show portfolio" do
       show_page.load(id: portfolio.id)
     end
 
-    scenario { expect(show_page).to have_heading(text: portfolio.title) }
-    scenario { expect(show_page).to_not have_link_to_edit }
+    it { expect(show_page).to have_heading(text: portfolio.title) }
+    it { expect(show_page).not_to have_link_to_edit }
   end
 
   context "when not logged in" do
     before { show_page.load(id: portfolio.id) }
 
-    scenario { expect(show_page).to have_heading(text: portfolio.title) }
-    scenario { expect(show_page).to_not have_link_to_edit }
+    it { expect(show_page).to have_heading(text: portfolio.title) }
+    it { expect(show_page).not_to have_link_to_edit }
   end
 end

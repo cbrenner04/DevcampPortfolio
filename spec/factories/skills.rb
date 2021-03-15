@@ -1,8 +1,8 @@
 # frozen_string_literal: true
 
-FactoryGirl.define do
+FactoryBot.define do
   factory :skill do
-    title "Foo"
-    percent_utilized 25
+    title { "Foo" }
+    percent_utilized { 25 }
   end
 end

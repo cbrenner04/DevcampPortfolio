@@ -2,7 +2,7 @@
 
 require "rails_helper"
 
-RSpec.feature "Create topic" do
+RSpec.describe "Create topic", type: :feature do
   let(:home_page) { Pages::Home.new }
   let(:new_page) { Pages::Topics::New.new }
   let(:form_page) { Pages::Topics::Form.new }
@@ -16,7 +16,7 @@ RSpec.feature "Create topic" do
       new_page.load
     end
 
-    scenario "creates a new topic" do
+    it "creates a new topic" do
       form_page.title.set "foo"
       form_page.submit.click
 
@@ -32,7 +32,7 @@ RSpec.feature "Create topic" do
       new_page.load
     end
 
-    scenario "cannot access new topic page" do
+    it "cannot access new topic page" do
       expect(home_page.heading).to have_text "Welcome to my portfolio site"
     end
   end
@@ -40,7 +40,7 @@ RSpec.feature "Create topic" do
   context "when no one is logged in" do
     before { new_page.load }
 
-    scenario "cannot access new topic page" do
+    it "cannot access new topic page" do
       expect(home_page.heading).to have_text "Welcome to my portfolio site"
     end
   end

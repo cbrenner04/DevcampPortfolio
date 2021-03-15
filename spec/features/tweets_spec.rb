@@ -2,10 +2,10 @@
 
 require "rails_helper"
 
-RSpec.feature "Tweets page" do
+RSpec.describe "Tweets page", type: :feature do
   let(:tweets_page) { Pages::Tweets.new }
 
-  background { tweets_page.load }
+  before { tweets_page.load }
 
-  scenario { expect(tweets_page.heading).to have_text "Tweets" }
+  it { expect(tweets_page.heading).to have_text "Tweets" }
 end

@@ -25,6 +25,6 @@ RSpec.describe Skill, type: :model do
     let!(:most_skill) { create :skill, percent_utilized: 50 }
     let!(:least_skill) { create :skill, percent_utilized: 20 }
 
-    it { expect(Skill.descending).to eq [most_skill, least_skill] }
+    it { expect(described_class.descending).to eq [most_skill, least_skill] }
   end
 end

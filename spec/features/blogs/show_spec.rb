@@ -2,7 +2,7 @@
 
 require "rails_helper"
 
-RSpec.feature "Show blog" do
+RSpec.describe "Show blog", type: :feature do
   let(:show_page) { Pages::Blogs::Show.new }
   let(:index_page) { Pages::Blogs::Index.new }
   let!(:blog) { create :blog, status: "draft" }
@@ -15,7 +15,7 @@ RSpec.feature "Show blog" do
       show_page.load(id: blog.id)
     end
 
-    scenario "views and can comment on blog" do
+    it "views and can comment on blog" do
       expect(show_page).to have_heading(text: blog.title)
       expect(show_page).to have_body(text: blog.body)
       expect(show_page).to have_comment_input
@@ -32,13 +32,13 @@ RSpec.feature "Show blog" do
       sign_in user
     end
 
-    scenario "cannot view a draft blog" do
+    it "cannot view a draft blog" do
       show_page.load(id: blog.id)
 
-      expect(show_page).to_not have_heading(text: blog.title)
+      expect(show_page).not_to have_heading(text: blog.title)
     end
 
-    scenario "views and can comment on published blog" do
+    it "views and can comment on published blog" do
       show_page.load(id: published_blog.id)
 
       expect(show_page).to have_heading(text: published_blog.title)
@@ -52,18 +52,18 @@ RSpec.feature "Show blog" do
       create :blog, title: "Bar", slug: "baz", status: "published"
     end
 
-    scenario "cannot view a draft blog" do
+    it "cannot view a draft blog" do
       show_page.load(id: blog.id)
 
-      expect(show_page).to_not have_heading(text: blog.title)
+      expect(show_page).not_to have_heading(text: blog.title)
     end
 
-    scenario "views and cannot comment on blog" do
+    it "views and cannot comment on blog" do
       show_page.load(id: published_blog.id)
 
       expect(show_page).to have_heading(text: published_blog.title)
       expect(show_page).to have_body(text: published_blog.body)
-      expect(show_page).to_not have_comment_input
+      expect(show_page).not_to have_comment_input
     end
   end
 end

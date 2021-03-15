@@ -2,7 +2,7 @@
 
 require "rails_helper"
 
-RSpec.feature "Show topic" do
+RSpec.describe "Show topic", type: :feature do
   let(:show_page) { Pages::Topics::Show.new }
   let(:edit_page) { Pages::Topics::Edit.new }
   let(:index_page) { Pages::Topics::Index.new }
@@ -30,23 +30,23 @@ RSpec.feature "Show topic" do
       show_page.load(id: topic.id)
     end
 
-    scenario "views blogs related to topic" do
+    it "views blogs related to topic" do
       expect(show_page).to have_text first_blog.title
       expect(show_page).to have_text second_blog.title
     end
 
-    scenario "can edit topic" do
+    it "can edit topic" do
       show_page.edit_link.click
 
       expect(edit_page).to have_heading(text: "Edit #{topic.title}")
     end
 
-    scenario "can destroy topic" do
+    it "can destroy topic" do
       topic = create :topic, title: "new topic"
       show_page.load(id: topic.id)
       show_page.destroy_link.click
 
-      expect(index_page).to_not have_list_item(text: topic.title)
+      expect(index_page).not_to have_list_item(text: topic.title)
     end
   end
 
@@ -58,34 +58,34 @@ RSpec.feature "Show topic" do
       show_page.load(id: topic.id)
     end
 
-    scenario "views blogs related to topic" do
+    it "views blogs related to topic" do
       expect(show_page).to have_text first_blog.title
       expect(show_page).to have_text second_blog.title
     end
 
-    scenario "cannot edit topic" do
-      expect(show_page).to_not have_edit_link
+    it "cannot edit topic" do
+      expect(show_page).not_to have_edit_link
     end
 
-    scenario "cannot destroy topic" do
-      expect(show_page).to_not have_destroy_link
+    it "cannot destroy topic" do
+      expect(show_page).not_to have_destroy_link
     end
   end
 
   context "when no user is signed in" do
     before { show_page.load(id: topic.id) }
 
-    scenario "views blogs related to topic" do
+    it "views blogs related to topic" do
       expect(show_page).to have_text first_blog.title
       expect(show_page).to have_text second_blog.title
     end
 
-    scenario "cannot edit topic" do
-      expect(show_page).to_not have_edit_link
+    it "cannot edit topic" do
+      expect(show_page).not_to have_edit_link
     end
 
-    scenario "cannot destroy topic" do
-      expect(show_page).to_not have_destroy_link
+    it "cannot destroy topic" do
+      expect(show_page).not_to have_destroy_link
     end
   end
 end

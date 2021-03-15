@@ -2,7 +2,7 @@
 
 require "rails_helper"
 
-RSpec.feature "Blogs index" do
+RSpec.describe "Blogs index", type: :feature do
   let(:index_page) { Pages::Blogs::Index.new }
   let!(:blog) { create :blog }
 
@@ -14,32 +14,32 @@ RSpec.feature "Blogs index" do
       index_page.load
     end
 
-    scenario { expect(index_page).to have_status_icon }
-    scenario { expect(index_page).to have_edit_icon }
-    scenario { expect(index_page).to have_delete_icon }
+    it { expect(index_page).to have_status_icon }
+    it { expect(index_page).to have_edit_icon }
+    it { expect(index_page).to have_delete_icon }
 
-    scenario "navigates to new form" do
+    it "navigates to new form" do
       index_page.new_link.click
 
-      expect(current_path).to eq new_blog_path
+      expect(page).to have_current_path new_blog_path, ignore_query: true
     end
 
-    scenario "navigates to show" do
+    it "navigates to show" do
       click_on blog.title
 
-      expect(current_path).to eq blog_path(blog)
+      expect(page).to have_current_path blog_path(blog), ignore_query: true
     end
 
-    scenario "navigates to topics" do
+    it "navigates to topics" do
       index_page.topics.click
 
-      expect(current_path).to eq topics_path
+      expect(page).to have_current_path topics_path, ignore_query: true
     end
 
-    scenario "can navigate to topics with blog posts" do
+    it "can navigate to topics with blog posts" do
       click_on blog.topic.title
 
-      expect(current_path).to eq topic_path(blog.topic)
+      expect(page).to have_current_path topic_path(blog.topic), ignore_query: true
     end
   end
 
@@ -52,27 +52,27 @@ RSpec.feature "Blogs index" do
       index_page.load
     end
 
-    scenario { expect(index_page).to_not have_new_link }
-    scenario { expect(index_page).to_not have_status_icon }
-    scenario { expect(index_page).to_not have_edit_icon }
-    scenario { expect(index_page).to_not have_delete_icon }
+    it { expect(index_page).not_to have_new_link }
+    it { expect(index_page).not_to have_status_icon }
+    it { expect(index_page).not_to have_edit_icon }
+    it { expect(index_page).not_to have_delete_icon }
 
-    scenario "navigates to show" do
+    it "navigates to show" do
       click_on blog.title
 
-      expect(current_path).to eq blog_path(blog)
+      expect(page).to have_current_path blog_path(blog), ignore_query: true
     end
 
-    scenario "navigates to topics" do
+    it "navigates to topics" do
       index_page.topics.click
 
-      expect(current_path).to eq topics_path
+      expect(page).to have_current_path topics_path, ignore_query: true
     end
 
-    scenario "can navigate to topics with blog posts" do
+    it "can navigate to topics with blog posts" do
       click_on blog.topic.title
 
-      expect(current_path).to eq topic_path(blog.topic)
+      expect(page).to have_current_path topic_path(blog.topic), ignore_query: true
     end
   end
 
@@ -82,27 +82,27 @@ RSpec.feature "Blogs index" do
       index_page.load
     end
 
-    scenario { expect(index_page).to_not have_new_link }
-    scenario { expect(index_page).to_not have_status_icon }
-    scenario { expect(index_page).to_not have_edit_icon }
-    scenario { expect(index_page).to_not have_delete_icon }
+    it { expect(index_page).not_to have_new_link }
+    it { expect(index_page).not_to have_status_icon }
+    it { expect(index_page).not_to have_edit_icon }
+    it { expect(index_page).not_to have_delete_icon }
 
-    scenario "navigates to show" do
+    it "navigates to show" do
       click_on blog.title
 
-      expect(current_path).to eq blog_path(blog)
+      expect(page).to have_current_path blog_path(blog), ignore_query: true
     end
 
-    scenario "navigates to topics" do
+    it "navigates to topics" do
       index_page.topics.click
 
-      expect(current_path).to eq topics_path
+      expect(page).to have_current_path topics_path, ignore_query: true
     end
 
-    scenario "can navigate to topics with blog posts" do
+    it "can navigate to topics with blog posts" do
       click_on blog.topic.title
 
-      expect(current_path).to eq topic_path(blog.topic)
+      expect(page).to have_current_path topic_path(blog.topic), ignore_query: true
     end
   end
 end

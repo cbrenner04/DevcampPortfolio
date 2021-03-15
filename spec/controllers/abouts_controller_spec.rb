@@ -9,7 +9,7 @@ RSpec.describe AboutsController, type: :controller do
   describe "GET #show" do
     before { get :show }
 
-    it { expect(response).to be_success }
+    it { expect(response).to be_successful }
     it { expect(assigns(:skills)).to eq [most_skilled, least_skilled] }
   end
 end

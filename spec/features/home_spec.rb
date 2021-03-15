@@ -2,18 +2,18 @@
 
 require "rails_helper"
 
-RSpec.feature "Home page" do
+RSpec.describe "Home page", type: :feature do
   let(:home_page) { Pages::Home.new }
 
-  background { home_page.load }
+  before { home_page.load }
 
-  scenario "visits" do
+  it "visits" do
     expect(home_page.heading).to have_text "Welcome to my portfolio site"
   end
 
-  scenario "navigates to the about page" do
+  it "navigates to the about page" do
     home_page.about_button.click
 
-    expect(current_path).to eq about_path
+    expect(page).to have_current_path about_path, ignore_query: true
   end
 end

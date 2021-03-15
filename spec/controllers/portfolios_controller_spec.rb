@@ -25,7 +25,7 @@ RSpec.describe PortfoliosController, type: :controller do
   describe "GET #index" do
     before { get :index, session: valid_session }
 
-    it { expect(response).to be_success }
+    it { expect(response).to be_successful }
     it { expect(assigns(:portfolio_items)).to eq([portfolio_item]) }
   end
 
@@ -34,14 +34,14 @@ RSpec.describe PortfoliosController, type: :controller do
       get :show, params: { id: portfolio_item.to_param }, session: valid_session
     end
 
-    it { expect(response).to be_success }
+    it { expect(response).to be_successful }
     it { expect(assigns(:portfolio_item)).to eq(portfolio_item) }
   end
 
   describe "GET #new" do
     before { get :new, session: valid_session }
 
-    it { expect(response).to be_success }
+    it { expect(response).to be_successful }
     it { expect(assigns(:portfolio_item)).to be_a_new(Portfolio) }
   end
 
@@ -50,7 +50,7 @@ RSpec.describe PortfoliosController, type: :controller do
       get :edit, params: { id: portfolio_item.to_param }, session: valid_session
     end
 
-    it { expect(response).to be_success }
+    it { expect(response).to be_successful }
     it { expect(assigns(:portfolio_item)).to eq(portfolio_item) }
   end
 
@@ -124,7 +124,7 @@ RSpec.describe PortfoliosController, type: :controller do
       }, session: valid_session
     end
 
-    it { expect(response).to be_success }
+    it { expect(response).to be_successful }
   end
 
   describe "DELETE #destroy" do

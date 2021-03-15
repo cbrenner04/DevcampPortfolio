@@ -2,7 +2,7 @@
 
 require "rails_helper"
 
-RSpec.feature "Portfolios" do
+RSpec.describe "Portfolios", type: :feature do
   let(:index_page) { Pages::Portfolios::Index.new }
   let(:show_page) { Pages::Portfolios::Show.new }
   let(:blog_index_page) { Pages::Blogs::Index.new }
@@ -17,9 +17,9 @@ RSpec.feature "Portfolios" do
       index_page.load
     end
 
-    scenario { expect(index_page).to_not have_masthead_heading }
+    it { expect(index_page).not_to have_masthead_heading }
 
-    scenario "navigates to show" do
+    it "navigates to show" do
       index_page.link_to_show(text: portfolio.title).click
 
       expect(show_page.heading).to have_text portfolio.title
@@ -34,21 +34,21 @@ RSpec.feature "Portfolios" do
       index_page.load
     end
 
-    scenario { expect(index_page).to have_masthead_heading }
+    it { expect(index_page).to have_masthead_heading }
 
-    scenario "navigates to about page" do
+    it "navigates to about page" do
       index_page.link_to_about.click
 
       expect(about_page.heading).to have_text "About me"
     end
 
-    scenario "navigates to blog" do
+    it "navigates to blog" do
       index_page.link_to_blog.click
 
       expect(blog_index_page.heading).to have_text "Chris's Blog"
     end
 
-    scenario "navigates to show" do
+    it "navigates to show" do
       index_page.link_to_show(text: portfolio.title).click
 
       expect(show_page.heading).to have_text portfolio.title
@@ -58,21 +58,21 @@ RSpec.feature "Portfolios" do
   context "when not logged in" do
     before { index_page.load }
 
-    scenario { expect(index_page).to have_masthead_heading }
+    it { expect(index_page).to have_masthead_heading }
 
-    scenario "navigates to about page" do
+    it "navigates to about page" do
       index_page.link_to_about.click
 
       expect(about_page.heading).to have_text "About me"
     end
 
-    scenario "navigates to blog" do
+    it "navigates to blog" do
       index_page.link_to_blog.click
 
       expect(blog_index_page.heading).to have_text "Chris's Blog"
     end
 
-    scenario "navigates to show" do
+    it "navigates to show" do
       index_page.link_to_show(text: portfolio.title).click
 
       expect(show_page.heading).to have_text portfolio.title

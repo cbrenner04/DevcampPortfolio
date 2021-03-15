@@ -1,8 +1,8 @@
 # frozen_string_literal: true
 
-FactoryGirl.define do
+FactoryBot.define do
   factory :technology do
-    name "MyString"
-    portfolio nil
+    name { "MyString" }
+    portfolio { nil }
   end
 end

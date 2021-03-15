@@ -8,7 +8,7 @@ RSpec.describe HomesController, type: :controller do
   describe "GET #show" do
     before { get :show }
 
-    it { expect(response).to be_success }
+    it { expect(response).to be_successful }
     it { expect(assigns(:posts)).to include blog }
   end
 end

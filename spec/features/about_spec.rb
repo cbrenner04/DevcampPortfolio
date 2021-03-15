@@ -2,10 +2,10 @@
 
 require "rails_helper"
 
-RSpec.feature "About page" do
+RSpec.describe "About page", type: :feature do
   let(:about_page) { Pages::About.new }
 
-  background { about_page.load }
+  before { about_page.load }
 
-  scenario { expect(about_page.heading).to have_text "About me" }
+  it { expect(about_page.heading).to have_text "About me" }
 end

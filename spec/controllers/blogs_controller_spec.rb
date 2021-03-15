@@ -17,28 +17,28 @@ RSpec.describe BlogsController, type: :controller do
   describe "GET #index" do
     before { get :index, session: valid_session }
 
-    it { expect(response).to be_success }
+    it { expect(response).to be_successful }
     it { expect(assigns(:blogs)).to eq([blog]) }
   end
 
   describe "GET #show" do
     before { get :show, params: { id: blog.to_param }, session: valid_session }
 
-    it { expect(response).to be_success }
+    it { expect(response).to be_successful }
     it { expect(assigns(:blog)).to eq(blog) }
   end
 
   describe "GET #new" do
     before { get :new, params: {}, session: valid_session }
 
-    it { expect(response).to be_success }
+    it { expect(response).to be_successful }
     it { expect(assigns(:blog)).to be_a_new(Blog) }
   end
 
   describe "GET #edit" do
     before { get :edit, params: { id: blog.to_param }, session: valid_session }
 
-    it { expect(response).to be_success }
+    it { expect(response).to be_successful }
     it { expect(assigns(:blog)).to eq(blog) }
   end
 

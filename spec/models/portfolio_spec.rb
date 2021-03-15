@@ -25,6 +25,6 @@ RSpec.describe Portfolio, type: :model do
     let!(:portfolio1) { create :portfolio, position: 1 }
     let!(:portfolio2) { create :portfolio, position: 2 }
 
-    it { expect(Portfolio.by_position).to eq [portfolio1, portfolio2] }
+    it { expect(described_class.by_position).to eq [portfolio1, portfolio2] }
   end
 end

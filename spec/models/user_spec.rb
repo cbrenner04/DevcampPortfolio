@@ -11,7 +11,7 @@ RSpec.describe User, type: :model do
     describe "with no name" do
       before { user.name = nil }
 
-      it { expect(user).to_not be_valid }
+      it { expect(user).not_to be_valid }
     end
   end
 

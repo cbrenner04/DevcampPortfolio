@@ -13,7 +13,7 @@ abort("The Rails environment is in production mode!") if Rails.env.production?
 
 require "spec_helper"
 require "rspec/rails"
-require "support/factory_girl"
+require "support/factory_bot"
 require "capybara/rails"
 require "capybara/rspec"
 require "site_prism"
@@ -24,7 +24,7 @@ Capybara.register_driver :poltergeist do |app|
   Capybara::Poltergeist::Driver.new(app, js_errors: false)
 end
 
-Dir[Rails.root.join("spec", "support", "**", "*.rb")].each { |f| require f }
+Dir[Rails.root.join("spec/support/**/*.rb")].sort.each { |f| require f }
 ActiveRecord::Migration.maintain_test_schema!
 
 RSpec.configure do |config|

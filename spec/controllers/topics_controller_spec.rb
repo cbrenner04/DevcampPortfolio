@@ -14,28 +14,28 @@ RSpec.describe TopicsController, type: :controller do
   describe "GET #index" do
     before { get :index, session: valid_session }
 
-    it { expect(response).to be_success }
+    it { expect(response).to be_successful }
     it { expect(assigns(:topics)).to include topic }
   end
 
   describe "GET #show" do
     before { get :show, params: { id: topic.to_param }, session: valid_session }
 
-    it { expect(response).to be_success }
+    it { expect(response).to be_successful }
     it { expect(assigns(:topic)).to eq(topic) }
   end
 
   describe "GET #new" do
     before { get :new, session: valid_session }
 
-    it { expect(response).to be_success }
+    it { expect(response).to be_successful }
     it { expect(assigns(:topic)).to be_a_new Topic }
   end
 
   describe "GET #edit" do
     before { get :edit, params: { id: topic.to_param }, session: valid_session }
 
-    it { expect(response).to be_success }
+    it { expect(response).to be_successful }
     it { expect(assigns(:topic)).to eq topic }
   end
 

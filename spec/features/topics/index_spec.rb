@@ -2,9 +2,10 @@
 
 require "rails_helper"
 
-RSpec.feature "Topics" do
+RSpec.describe "Topics", type: :feature do
   let(:index_page) { Pages::Topics::Index.new }
   let(:topic) { create :topic }
+
   before do
     2.times do |i|
       create :blog,
@@ -31,7 +32,7 @@ RSpec.feature "Topics" do
       index_page.load
     end
 
-    scenario "views topics with count of related, published blogs" do
+    it "views topics with count of related, published blogs" do
       expect(index_page).to have_text "#{topic.title} 2"
     end
   end
@@ -44,7 +45,7 @@ RSpec.feature "Topics" do
       index_page.load
     end
 
-    scenario "views topics with count of related, published blogs" do
+    it "views topics with count of related, published blogs" do
       expect(index_page).to have_text "#{topic.title} 2"
     end
   end
@@ -52,7 +53,7 @@ RSpec.feature "Topics" do
   context "when no user is signed in" do
     before { index_page.load }
 
-    scenario "views topics with count of related, published blogs" do
+    it "views topics with count of related, published blogs" do
       expect(index_page).to have_text "#{topic.title} 2"
     end
   end

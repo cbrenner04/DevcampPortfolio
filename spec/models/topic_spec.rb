@@ -11,15 +11,16 @@ RSpec.describe Topic, type: :model do
     describe "with no title" do
       before { topic.title = nil }
 
-      it { expect(topic).to_not be_valid }
+      it { expect(topic).not_to be_valid }
     end
   end
 
   describe ".with_blogs" do
-    let!(:topic2) { create :topic }
+    before do
+      create :topic
+      create :blog, topic: topic
+    end
 
-    before { create :blog, topic: topic }
-
-    it { expect(Topic.with_blogs).to eq [topic] }
+    it { expect(described_class.with_blogs).to eq [topic] }
   end
 end

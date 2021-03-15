@@ -31,6 +31,6 @@ RSpec.describe Blog, type: :model do
     let!(:blog1) { create :blog, slug: "foo" }
     let!(:blog2) { create :blog, slug: "bar" }
 
-    it { expect(Blog.descending).to eq [blog2, blog1] }
+    it { expect(described_class.descending).to eq [blog2, blog1] }
   end
 end

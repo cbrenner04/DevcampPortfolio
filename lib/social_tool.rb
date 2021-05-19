@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 # functionality for getting tweets
+# rubocop:disable Rails/EnvironmentVariableAccess
 module SocialTool
   def self.twitter_search
     client = Twitter::REST::Client.new do |config|
@@ -13,3 +14,4 @@ module SocialTool
     client.user_timeline("cbrenner265").take(6).collect(&:text)
   end
 end
+# rubocop:enable Rails/EnvironmentVariableAccess

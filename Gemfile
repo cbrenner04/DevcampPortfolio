@@ -7,30 +7,30 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
-gem "coffee-rails", "~> 5.0"
+gem "coffee-rails", "~> 5.0", ">= 5.0.0"
 gem "jbuilder", "~> 2.6", ">= 2.6.4"
 gem "jquery-rails", ">= 4.4.0"
 gem "pg", "~> 0.18"
-gem "puma", "~> 3.12", ">= 3.12.6"
-gem "rails", "~> 6.0.3", ">= 6.0.3.5"
+gem "puma", "~> 4.3", ">= 4.3.8"
+gem "rails", "~> 6.0.3", ">= 6.0.3.7"
 gem "sass-rails", "~> 5.1", ">= 5.1.0"
 gem "turbolinks", "~> 5"
 gem "uglifier", ">= 1.3.0"
 
 group :development, :test do
   gem "byebug", platform: :mri
-  gem "factory_bot_rails", "~> 4.9", ">= 4.9.0"
-  gem "rspec-rails", "~> 5.0"
-  gem "rubocop", "~> 1.11"
+  gem "factory_bot_rails", "~> 4.11", ">= 4.11.1"
+  gem "rspec-rails", "~> 5.0", ">= 5.0.0"
+  gem "rubocop", "~> 1.11", ">= 1.11.0"
   gem "rubocop-rails", "~> 2.9", ">= 2.9.1"
-  gem "rubocop-rspec", "~> 2.2"
+  gem "rubocop-rspec", "~> 2.2", ">= 2.2.0"
 end
 
 group :development do
   gem "listen", "~> 3.0.5"
   gem "spring", ">= 2.0.1"
   gem "spring-watcher-listen", "~> 2.0.1"
-  gem "web-console", ">= 3.7.0"
+  gem "web-console", ">= 4.1.0"
 end
 
 group :test do
@@ -47,11 +47,11 @@ gem "site_prism", "~> 2.17", ">= 2.17.1"
 # authentication
 gem "devise", "~> 4.7", ">= 4.7.3"
 # style
-gem "bootstrap", "~> 4.5", ">= 4.5.3"
+gem "bootstrap", "~> 4.6", ">= 4.6.0"
 source "https://rails-assets.org" do
   gem "rails-assets-tether", ">= 1.3.3"
 end
-gem "font-awesome-rails", "~> 4.7", ">= 4.7.0.6"
+gem "font-awesome-rails", "~> 4.7", ">= 4.7.0.7"
 # authorization
 gem "petergate", "~> 1.9", ">= 1.9.1"
 # pagination

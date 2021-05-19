@@ -10,6 +10,7 @@ end
 gem "coffee-rails", "~> 5.0", ">= 5.0.0"
 gem "jbuilder", "~> 2.6", ">= 2.6.4"
 gem "jquery-rails", ">= 4.4.0"
+gem "nokogiri", "~> 1.11", ">= 1.11.4"
 gem "pg", "~> 0.18"
 gem "puma", "~> 4.3", ">= 4.3.8"
 gem "rails", "~> 6.0.3", ">= 6.0.3.7"

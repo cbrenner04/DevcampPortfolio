@@ -81,4 +81,4 @@ gem "launchy", "~> 2.4", ">= 2.4.3"
 gem "poltergeist", "~> 1.18", ">= 1.18.1"
 
 # declare ruby version for heroku
-ruby "2.7.2"
+ruby "2.7.3"

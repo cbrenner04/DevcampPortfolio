@@ -204,7 +204,7 @@ GEM
     multipart-post (2.1.1)
     naught (1.1.0)
     nio4r (2.5.7)
-    nokogiri (1.11.4-x86_64-darwin)
+    nokogiri (1.11.4)
       racc (~> 1.4)
     orm_adapter (0.5.0)
     parallel (1.20.1)
@@ -383,7 +383,7 @@ GEM
     zeitwerk (2.4.2)
 
 PLATFORMS
-  x86_64-darwin-19
+  ruby
 
 DEPENDENCIES
   bootstrap (~> 4.6, >= 4.6.0)
@@ -407,7 +407,6 @@ DEPENDENCIES
   launchy (~> 2.4, >= 2.4.3)
   listen (~> 3.0.5)
   mini_magick (~> 4.9, >= 4.9.4)
-  nokogiri (~> 1.11, >= 1.11.4)
   petergate (~> 1.9, >= 1.9.1)
   pg (~> 0.18)
   poltergeist (~> 1.18, >= 1.18.1)
@@ -432,7 +431,7 @@ DEPENDENCIES
   web-console (>= 4.1.0)
 
 RUBY VERSION
-   ruby 2.7.2p137
+   ruby 2.7.3
 
 BUNDLED WITH
-   2.2.14
+   2.2.17

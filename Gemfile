@@ -68,7 +68,7 @@ gem "cocoon", "~> 1.2", ">= 1.2.9"
 # notifications
 gem "gritter", "~> 1.2"
 # twitter
-gem "twitter", "~> 6.1"
+gem "twitter", "~> 6.2", ">= 6.2.0"
 # redis
 gem "redis", "~> 3.3", ">= 3.3.3"
 # markdown parser
@@ -76,7 +76,7 @@ gem "redcarpet", "~> 3.5", ">= 3.5.1"
 # code syntax highlighting
 gem "coderay", "~> 1.1", ">= 1.1.1"
 # to launch `save_and_open_page`
-gem "launchy", "~> 2.4", ">= 2.4.3"
+gem "launchy", "~> 2.5", ">= 2.5.0"
 # for headless browser test
 gem "poltergeist", "~> 1.18", ">= 1.18.1"
 

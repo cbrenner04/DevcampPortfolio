@@ -25,6 +25,8 @@ class TopicsController < ApplicationController
     @topic = Topic.new
   end
 
+  def edit; end
+
   def create
     @topic = Topic.new(topic_params)
 
@@ -34,8 +36,6 @@ class TopicsController < ApplicationController
       render :new
     end
   end
-
-  def edit; end
 
   def update
     if @topic.update(topic_params)

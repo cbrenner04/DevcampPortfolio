@@ -19,7 +19,6 @@ Rails.application.routes.draw do
     put :sort, on: :collection
   end
   resources :topics
-  resources :tweets, only: :index
 
   mount ActionCable.server => "/cable"
 

@@ -4,7 +4,7 @@
 module PortfoliosHelper
   def image_generator(height:, width:)
     "https://placeholdit.imgix.net/~text?txtsize=33&txt=#{width}%C3%97" \
-    "#{height}&w=#{width}&h=#{height}"
+      "#{height}&w=#{width}&h=#{height}"
   end
 
   def portfolio_img(image:, type:)

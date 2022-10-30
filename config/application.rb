@@ -30,6 +30,6 @@ module DevcampPortfolio
 
     config.eager_load_paths << Rails.root.join("lib")
 
-    config.secret_key_base = ENV["SECRET_KEY_BASE"]
+    config.secret_key_base = ENV.fetch("SECRET_KEY_BASE", nil)
   end
 end

@@ -67,8 +67,6 @@ gem "mini_magick", "~> 4.9", ">= 4.9.4"
 gem "cocoon", "~> 1.2", ">= 1.2.9"
 # notifications
 gem "gritter", "~> 1.2"
-# twitter
-gem "twitter", "~> 6.2", ">= 6.2.0"
 # redis
 gem "redis", "~> 3.3", ">= 3.3.3"
 # markdown parser

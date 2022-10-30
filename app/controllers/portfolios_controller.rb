@@ -25,6 +25,8 @@ class PortfoliosController < ApplicationController
     @portfolio_item = Portfolio.new
   end
 
+  def edit; end
+
   def create
     @portfolio_item = Portfolio.new(portfolio_params)
 
@@ -35,8 +37,6 @@ class PortfoliosController < ApplicationController
       render :new
     end
   end
-
-  def edit; end
 
   def update
     if @portfolio_item.update(portfolio_params)

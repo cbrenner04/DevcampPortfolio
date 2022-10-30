@@ -8,7 +8,7 @@ git_source(:github) do |repo_name|
 end
 
 gem "coffee-rails", "~> 5.0", ">= 5.0.0"
-gem "jbuilder", "~> 2.11", ">= 2.11.2"
+gem "jbuilder", "~> 2.11", ">= 2.11.5"
 gem "jquery-rails", ">= 4.4.0"
 gem "pg", "~> 0.18"
 gem "puma", "~> 4.3", ">= 4.3.12"

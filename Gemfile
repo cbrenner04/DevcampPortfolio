@@ -8,7 +8,7 @@ git_source(:github) do |repo_name|
 end
 
 gem "coffee-rails", "~> 5.0", ">= 5.0.0"
-gem "jbuilder", "~> 2.6", ">= 2.6.4"
+gem "jbuilder", "~> 2.11", ">= 2.11.2"
 gem "jquery-rails", ">= 4.4.0"
 gem "pg", "~> 0.18"
 gem "puma", "~> 4.3", ">= 4.3.12"
@@ -41,7 +41,7 @@ end
 
 # addons
 # slugs for blogs
-gem "friendly_id", "~> 5.3", ">= 5.3.0"
+gem "friendly_id", "~> 5.4", ">= 5.4.2"
 # page object model for features
 gem "site_prism", "~> 2.17", ">= 2.17.1"
 # authentication

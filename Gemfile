@@ -12,8 +12,8 @@ gem "jbuilder", "~> 2.11", ">= 2.11.5"
 gem "jquery-rails", ">= 4.4.0"
 gem "pg", "~> 0.18"
 gem "puma", "~> 4.3", ">= 4.3.12"
-gem "rails", "~> 6.0.5", ">= 6.0.5.1"
-gem "sass-rails", "~> 5.1", ">= 5.1.0"
+gem "rails", "~> 6.0.6"
+gem "sass-rails", "~> 6.0", ">= 6.0.0"
 gem "turbolinks", "~> 5"
 gem "uglifier", ">= 1.3.0"
 
@@ -47,7 +47,7 @@ gem "site_prism", "~> 2.17", ">= 2.17.1"
 # authentication
 gem "devise", "~> 4.8", ">= 4.8.0"
 # style
-gem "bootstrap", "~> 4.6", ">= 4.6.0"
+gem "bootstrap", "~> 4.6", ">= 4.6.2"
 source "https://rails-assets.org" do
   gem "rails-assets-tether", ">= 1.3.3"
 end

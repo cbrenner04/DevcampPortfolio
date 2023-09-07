@@ -30,7 +30,7 @@ group :development do
   gem "listen", "~> 3.0.5"
   gem "spring", ">= 2.0.1"
   gem "spring-watcher-listen", "~> 2.0.1"
-  gem "web-console", ">= 4.1.0"
+  gem "web-console", ">= 4.2.1"
 end
 
 group :test do

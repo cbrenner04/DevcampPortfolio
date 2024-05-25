@@ -21,9 +21,9 @@ group :development, :test do
   gem "byebug", platform: :mri
   gem "factory_bot_rails", "~> 4.11", ">= 4.11.1"
   gem "rspec-rails", "~> 5.0", ">= 5.0.2"
-  gem "rubocop", "~> 1.11", ">= 1.11.0"
-  gem "rubocop-rails", "~> 2.10", ">= 2.10.1"
-  gem "rubocop-rspec", "~> 2.2", ">= 2.2.0"
+  gem "rubocop", "~> 1.38", ">= 1.38.0"
+  gem "rubocop-rails", "~> 2.17", ">= 2.17.3"
+  gem "rubocop-rspec", "~> 2.4", ">= 2.4.0"
 end
 
 group :development do

@@ -47,7 +47,7 @@ gem "site_prism", "~> 2.17", ">= 2.17.1"
 # authentication
 gem "devise", "~> 4.8", ">= 4.8.0"
 # style
-gem "bootstrap", "~> 4.6", ">= 4.6.0"
+gem "bootstrap", "~> 5.0", ">= 5.0.0"
 source "https://rails-assets.org" do
   gem "rails-assets-tether", ">= 1.3.3"
 end

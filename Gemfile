@@ -12,7 +12,7 @@ gem "jbuilder", "~> 2.11", ">= 2.11.5"
 gem "jquery-rails", ">= 4.4.0"
 gem "pg", "~> 0.18"
 gem "puma", "~> 4.3", ">= 4.3.12"
-gem "rails", "~> 6.0.5", ">= 6.0.5.1"
+gem "rails", "~> 7.1.5", ">= 7.1.5.2"
 gem "sass-rails", "~> 5.1", ">= 5.1.0"
 gem "turbolinks", "~> 5"
 gem "uglifier", ">= 1.3.0"
@@ -41,7 +41,7 @@ end
 
 # addons
 # slugs for blogs
-gem "friendly_id", "~> 5.4", ">= 5.4.2"
+gem "friendly_id", "~> 5.5", ">= 5.5.0"
 # page object model for features
 gem "site_prism", "~> 2.17", ">= 2.17.1"
 # authentication
@@ -53,7 +53,7 @@ source "https://rails-assets.org" do
 end
 gem "font-awesome-rails", "~> 4.7", ">= 4.7.0.7"
 # authorization
-gem "petergate", "~> 1.9", ">= 1.9.1"
+gem "petergate", "~> 2.0", ">= 2.0.1"
 # pagination
 gem "kaminari", "~> 1.2", ">= 1.2.1"
 # jquery ui

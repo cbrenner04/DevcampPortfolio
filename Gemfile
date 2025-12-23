@@ -60,7 +60,7 @@ gem "kaminari", "~> 1.2", ">= 1.2.1"
 gem "jquery-ui-rails", "~> 6.0", ">= 6.0.1"
 # uploading files / videos / images
 gem "carrierwave", "~> 1.3", ">= 1.3.2"
-gem "carrierwave-aws", "~> 1.4", ">= 1.4.0"
+gem "carrierwave-aws", "~> 1.5", ">= 1.5.0"
 gem "dotenv-rails", "~> 2.7", ">= 2.7.6"
 gem "mini_magick", "~> 4.9", ">= 4.9.4"
 # javascript elements in form
